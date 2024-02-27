@@ -1,0 +1,28 @@
+{
+    "root": true,
+    "ignorePatterns": ["!**/*"],
+    "overrides": [
+        {
+            "files": ["*.ts"],
+            "extends": ["plugin:prettier/recommended", "plugin:@typescript-eslint/recommended"],
+            "rules": {
+                "no-nested-ternary": "error",
+                "default-case": "error",
+                "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+                "object-shorthand": ["error", "always"],
+                "object-property-newline": ["error", { "allowAllPropertiesOnSameLine": true }],
+
+                "@typescript-eslint/explicit-member-accessibility": [
+                    "error",
+                    {
+                        "accessibility": "no-public"
+                    }
+                ]
+            }
+        },
+        {
+            "files": ["*.html"],
+            "rules": {}
+        }
+    ]
+}
