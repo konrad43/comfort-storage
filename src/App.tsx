@@ -1,11 +1,17 @@
 import logo from './logo.svg';
 import './App.scss';
-import { Navbar } from './components/Navbar/Navbar';
+import { MainNavbar } from './components/Navbar/Navbar';
+import { Hero } from './components/Hero/Hero';
+import { MainVideo } from './components/MainVideo/MainVideo';
+import { Cards } from './components/Cards/Cards';
 
 function App() {
     return (
         <div className="">
-            <Navbar />
+            <MainNavbar />
+            <Hero />
+            <MainVideo />
+            <Cards />
         </div>
     );
 }
