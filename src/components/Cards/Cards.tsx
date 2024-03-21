@@ -4,15 +4,15 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 import { IconCard } from './IconCard';
+import { cards } from './cardsData';
 
 export const Cards: FC = () => {
-    const cards = Array.from(new Array(6), (x, i) => i);
     return (
-        <Container>
-            <Row className="g-3">
+        <Container className="my-5">
+            <Row className="g-3 row-cols-lg-3">
                 {cards.map(card => (
-                    <Col lg={4} xs={12} className="p-3">
-                        <IconCard key={card} />
+                    <Col xs={12} className="p-3">
+                        <IconCard key={card.title} {...card} />
                     </Col>
                 ))}
             </Row>

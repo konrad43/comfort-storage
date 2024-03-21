@@ -1,0 +1,26 @@
+@import '../../style//variables';
+
+.offerWrapper {
+    height: 512px;
+    background-color: $ecru500;
+}
+
+.flexContainer {
+    display: flex;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.subtitle {
+    color: $gray600;
+}
+
+.animation {
+    width: 611px;
+    height: 512px;
+}
+
+.button {
+    margin-top: 64px;
+}

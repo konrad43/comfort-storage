@@ -1,18 +1,23 @@
 import Card from 'react-bootstrap/Card';
 import Image from 'react-bootstrap/Image';
 
-import icon from '../../assets/icon-placeholder.png';
+import style from './Cards.module.scss';
 
-export const IconCard = () => (
-    <Card style={{ width: '18rem' }}>
-        <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
-        <Card.Body>
-            <Image src={icon} />
-            <Card.Title>Card Title</Card.Title>
-            <Card.Text>
-                Some quick example text to build on the card title and make up the bulk of the
-                card's content.
-            </Card.Text>
-        </Card.Body>
-    </Card>
-);
+export interface IconCardProps {
+    icon: string;
+    title: string;
+    desc: string;
+}
+
+export const IconCard = (props: IconCardProps) => {
+    const { icon, title, desc } = props;
+    return (
+        <Card className="">
+            <Card.Body>
+                <Image src={icon} />
+                <Card.Title className={style.title}>{title}</Card.Title>
+                <Card.Text>{desc}</Card.Text>
+            </Card.Body>
+        </Card>
+    );
+};
