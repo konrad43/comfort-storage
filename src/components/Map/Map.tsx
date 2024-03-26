@@ -1,7 +1,70 @@
-export const Map = () => (
-    <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2452.2928868793006!2d21.014406577783465!3d52.07439797194771!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47192f3dc67f862f%3A0xc9a4fe06e9d645a8!2sComfort%20Storage%20Piaseczno!5e0!3m2!1spl!2spl!4v1709306285851!5m2!1spl!2spl"
-        width="600"
-        height="450"
-        loading="lazy"></iframe>
-);
+import { Wrapper, Status } from '@googlemaps/react-wrapper';
+import { ReactElement, useEffect, useRef } from 'react';
+
+import style from './Map.module.scss';
+import { mapStyles, places } from './map.config';
+
+const apiKey = process.env.REACT_APP_GOOGLE_MAPS;
+
+const render = (status: Status) => {
+    if (status === Status.LOADING) return <h3>{status} ..</h3>;
+    if (status === Status.FAILURE) return <h3>{status} ...</h3>;
+    return <></>;
+};
+
+export type MapProps = {
+    center: google.maps.LatLngLiteral;
+    zoom: number;
+};
+
+export function MyMapComponent({ center, zoom }: MapProps) {
+    const ref = useRef<HTMLDivElement>();
+    let map: google.maps.Map;
+
+    useEffect(() => {
+        async function getMapLibrary() {
+            const { Marker } = (await google.maps.importLibrary(
+                'marker'
+            )) as google.maps.MarkerLibrary;
+            return { Marker };
+        }
+
+        if (ref.current) {
+            map = new window.google.maps.Map(ref.current, {
+                center,
+                zoom
+            });
+
+            map.setOptions({ styles: mapStyles });
+
+            getMapLibrary().then(({ Marker }) => {
+                places.forEach(position => {
+                    new Marker({
+                        map: map,
+                        position: position,
+                        title: 'Elo'
+                    });
+                });
+            });
+        }
+    });
+
+    if (!ref) {
+        return null;
+    }
+
+    return (
+        <div className={style.map} ref={ref as React.MutableRefObject<HTMLDivElement>} id="map" />
+    );
+}
+
+export const Map = (props: MapProps) => {
+    if (!apiKey) {
+        return null;
+    }
+    return (
+        <Wrapper apiKey={apiKey} render={render}>
+            <MyMapComponent {...props} />
+        </Wrapper>
+    );
+};

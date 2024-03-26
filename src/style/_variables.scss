@@ -1,12 +1,29 @@
-// Color scheme
-
+/*
+ * Color scheme
+ */
 // Ecru
-$ecru500: #ffe5da;
+$ecru500: #ffe8e0;
 $ecru700: #f5d1c1;
 
 // Gray
 $gray600: #696969;
+$gray300: #d0d0d0;
 
+//Red
+$red500: #c31918;
+
+// Spacing
+$spacer: 1rem;
+$spacers: (
+    0: 0,
+    1: $spacer * 0.25,
+    2: $spacer * 1,
+    3: $spacer * 1.5,
+    4: $spacer * 2,
+    5: $spacer * 4
+);
+
+// Headings
 $h1-font-size: 4rem;
 $h2-font-size: 2.25rem;
 $h3-font-size: 1.875rem;
@@ -14,6 +31,15 @@ $h4-font-size: 1.5rem;
 $h5-font-size: 1.25rem;
 $h6-font-size: 1.25rem;
 
+// Button
 $btn-border-radius: 32px;
 
+// Card
 $card-border-color: transparent;
+
+// Input
+$input-border-radius: 32px;
+$input-group-addon-bg: transparent;
+
+// Cards
+$card-border-radius: 1rem;

@@ -10,9 +10,9 @@ export const Cards: FC = () => {
     return (
         <Container className="my-5">
             <Row className="g-3 row-cols-lg-3">
-                {cards.map(card => (
-                    <Col xs={12} className="p-3">
-                        <IconCard key={card.title} {...card} />
+                {cards.map((card, idx) => (
+                    <Col key={idx} xs={12} className="p-3">
+                        <IconCard {...card} />
                     </Col>
                 ))}
             </Row>
