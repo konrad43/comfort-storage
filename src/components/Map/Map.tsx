@@ -18,7 +18,7 @@ export type MapProps = {
 };
 
 export function MyMapComponent({ center, zoom }: MapProps) {
-    const ref = useRef<HTMLDivElement>();
+    const ref = useRef<HTMLDivElement>(null);
     let map: google.maps.Map;
 
     useEffect(() => {
@@ -48,10 +48,6 @@ export function MyMapComponent({ center, zoom }: MapProps) {
             });
         }
     });
-
-    if (!ref) {
-        return null;
-    }
 
     return (
         <div className={style.map} ref={ref as React.MutableRefObject<HTMLDivElement>} id="map" />

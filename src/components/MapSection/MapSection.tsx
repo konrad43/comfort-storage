@@ -15,6 +15,7 @@ import { Map } from '../Map/Map';
 import { StorageCard, storageCards } from './cards';
 import style from './MapSection.module.scss';
 import { useState } from 'react';
+import { TopForm } from './TopForm';
 
 interface HorizontalCardProps extends StorageCard {
     onClick: (card: StorageCard) => void;
@@ -56,6 +57,8 @@ export const MapSection = () => {
 
     const onClick = (cardData: StorageCard) => {
         console.log('🚀 ~ cardData:', cardData);
+        setCenter(cardData.latLng);
+        setZoom(13);
     };
 
     return (
@@ -67,20 +70,7 @@ export const MapSection = () => {
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi placerat sem
                         vitae sem porta, ac tempor ex gravida.{' '}
                     </h5>
-                    <Form className="my-4">
-                        <Form.Group className="mb-3 d-flex" controlId="map-form">
-                            <Form.Label hidden>Address</Form.Label>
-                            <InputGroup>
-                                <Form.Control type="text" placeholder="wpisz adres..." />
-                                <InputGroup.Text>
-                                    <Image src={search} />
-                                </InputGroup.Text>
-                            </InputGroup>
-                            <Button className="mx-2" variant="danger">
-                                Szukaj
-                            </Button>
-                        </Form.Group>
-                    </Form>
+                    <TopForm />
                 </Col>
             </Row>
             <Row>
