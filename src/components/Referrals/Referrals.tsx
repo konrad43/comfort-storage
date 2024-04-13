@@ -18,7 +18,9 @@ export const Referrals = () => {
                 <div className={style.referralsHeader}>
                     <h3>Opinie z Google</h3>
                     <h4>Dołącz do grona zadowolonych klientów</h4>
-                    <Button variant="danger">Rezerwuj teraz</Button>
+                    <Button className="mt-2" variant="danger">
+                        Rezerwuj teraz
+                    </Button>
                 </div>
             </Row>
             <Row>
