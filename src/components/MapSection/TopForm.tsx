@@ -4,29 +4,32 @@ import Image from 'react-bootstrap/Image';
 import Button from 'react-bootstrap/Button';
 
 import search from '../../assets/icons/search.svg';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { LatLng } from './cards';
 
 interface TopFormProps {
     // map: google.maps.Map;
+    centerMap: (position: LatLng) => void;
 }
 
 export const TopForm = (props: TopFormProps) => {
+    const { centerMap } = props;
+
     let autocomplete: google.maps.places.Autocomplete;
-    // const { map } = props;
+    const [location, setLocation] = useState<LatLng>();
     const infoContent = useRef<HTMLDivElement>(null);
     const input = useRef<HTMLInputElement>(null);
     const options = {
         fields: ['formatted_address', 'geometry', 'name'],
         strictBounds: false
     };
+
     useEffect(() => {
-        async function getMapLibrary() {
-            const { Autocomplete } = (await google.maps.importLibrary(
-                'places'
-            )) as google.maps.PlacesLibrary;
-
+        async function loadInfoWindow() {
+            if (!window.google.maps || !google.maps.places) {
+                return;
+            }
             const infoWindow = new window.google.maps.InfoWindow();
-
             infoWindow.setContent(infoContent.current);
 
             if (input.current) {
@@ -34,25 +37,19 @@ export const TopForm = (props: TopFormProps) => {
 
                 autocomplete.addListener('place_changed', () => {
                     infoWindow.close();
-
                     const place = autocomplete.getPlace();
-                    console.log('🚀 ~ place:', place);
+                    setLocation(place.geometry?.location?.toJSON());
                 });
             }
-            return { Autocomplete };
         }
 
-        getMapLibrary();
-
-        // return () => {
-        //     autocomplete
-        // }
+        loadInfoWindow();
     }, []);
 
     const onSubmit = (event: React.SyntheticEvent) => {
         event.preventDefault();
 
-        console.log('🚀 ~ event:', event);
+        location && centerMap(location);
     };
 
     return (
@@ -65,7 +62,7 @@ export const TopForm = (props: TopFormProps) => {
                         <Image src={search} />
                     </InputGroup.Text>
                 </InputGroup>
-                <Button className="mx-2" variant="danger">
+                <Button className="mx-2" variant="danger" type="submit">
                     Szukaj
                 </Button>
                 <div className="info" ref={infoContent}></div>

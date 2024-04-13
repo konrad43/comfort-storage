@@ -12,10 +12,11 @@ import search from '../../assets/icons/search.svg';
 import caret from '../../assets/icons/caret.svg';
 
 import { Map } from '../Map/Map';
-import { StorageCard, storageCards } from './cards';
+import { LatLng, StorageCard, storageCards } from './cards';
 import style from './MapSection.module.scss';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { TopForm } from './TopForm';
+import { mapStyles, places } from '../Map/map.config';
 
 interface HorizontalCardProps extends StorageCard {
     onClick: (card: StorageCard) => void;
@@ -54,11 +55,49 @@ const HorizontalCard = (props: HorizontalCardProps) => {
 export const MapSection = () => {
     const [center, setCenter] = useState({ lat: 52.1691494, lng: 20.9525033 });
     const [zoom, setZoom] = useState(11);
+    const ref = useRef<HTMLDivElement>(null);
+
+    let map: google.maps.Map;
+
+    useEffect(() => {
+        async function getMapLibrary() {
+            const { Marker } = (await google.maps.importLibrary(
+                'marker'
+            )) as google.maps.MarkerLibrary;
+            return { Marker };
+        }
+
+        if (ref.current) {
+            map = new window.google.maps.Map(ref.current, {
+                center,
+                zoom
+            });
+            console.log('🚀 ~ map:', map);
+
+            map.setOptions({ styles: mapStyles });
+
+            getMapLibrary().then(({ Marker }) => {
+                places.forEach(position => {
+                    new Marker({
+                        map: map,
+                        position: position,
+                        title: 'Elo'
+                    });
+                });
+            });
+        }
+    }, [ref]);
+
+    const centerMap = (latLng: LatLng) => {
+        map.setCenter(latLng);
+        map.setZoom(13);
+    };
 
     const onClick = (cardData: StorageCard) => {
         console.log('🚀 ~ cardData:', cardData);
-        setCenter(cardData.latLng);
-        setZoom(13);
+        // setCenter(cardData.latLng);
+        // setZoom(13);
+        centerMap(cardData.latLng);
     };
 
     return (
@@ -70,12 +109,14 @@ export const MapSection = () => {
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi placerat sem
                         vitae sem porta, ac tempor ex gravida.{' '}
                     </h5>
-                    <TopForm />
+                    <TopForm centerMap={centerMap} />
                 </Col>
             </Row>
             <Row>
                 <Col lg={8} xs={12}>
-                    <Map center={center} zoom={zoom} />
+                    <Map>
+                        <div className={style.map} ref={ref} id="map" />
+                    </Map>
                 </Col>
                 <Col lg={4} xs={12}>
                     {storageCards.map(card => (

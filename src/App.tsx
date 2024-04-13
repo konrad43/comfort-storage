@@ -6,6 +6,7 @@ import { Cards } from './components/Cards/Cards';
 import { Offer } from './components/Offer/Offer';
 import { MapSection } from './components/MapSection/MapSection';
 import { PhotoSection } from './components/PhotoSection/PhotoSection';
+import { Referrals } from './components/Referrals/Referrals';
 
 function App() {
     return (
@@ -17,6 +18,7 @@ function App() {
             <Offer />
             <MapSection />
             <PhotoSection />
+            <Referrals />
         </div>
     );
 }

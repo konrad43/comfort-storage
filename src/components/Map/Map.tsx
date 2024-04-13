@@ -18,49 +18,16 @@ export type MapProps = {
 };
 
 export function MyMapComponent({ center, zoom }: MapProps) {
-    const ref = useRef<HTMLDivElement>(null);
-    let map: google.maps.Map;
-
-    useEffect(() => {
-        async function getMapLibrary() {
-            const { Marker } = (await google.maps.importLibrary(
-                'marker'
-            )) as google.maps.MarkerLibrary;
-            return { Marker };
-        }
-
-        if (ref.current) {
-            map = new window.google.maps.Map(ref.current, {
-                center,
-                zoom
-            });
-
-            map.setOptions({ styles: mapStyles });
-
-            getMapLibrary().then(({ Marker }) => {
-                places.forEach(position => {
-                    new Marker({
-                        map: map,
-                        position: position,
-                        title: 'Elo'
-                    });
-                });
-            });
-        }
-    });
-
-    return (
-        <div className={style.map} ref={ref as React.MutableRefObject<HTMLDivElement>} id="map" />
-    );
+    return <div className={style.map} id="map" />;
 }
 
-export const Map = (props: MapProps) => {
+export const Map = ({ children }: { children: ReactElement }) => {
     if (!apiKey) {
         return null;
     }
     return (
         <Wrapper apiKey={apiKey} render={render}>
-            <MyMapComponent {...props} />
+            {children}
         </Wrapper>
     );
 };

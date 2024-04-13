@@ -1,11 +1,13 @@
 import img from '../../assets/magazyn.png';
 
+export type LatLng = { lat: number; lng: number };
+
 export interface StorageCard {
     image: string;
     city: string;
     address: string;
     zipCode: string;
-    latLng: { lat: number; lng: number };
+    latLng: LatLng;
 }
 
 export const storageCards: StorageCard[] = [
