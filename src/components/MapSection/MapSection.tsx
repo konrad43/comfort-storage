@@ -101,7 +101,7 @@ export const MapSection = () => {
     };
 
     return (
-        <Container className="my-5">
+        <Container className="my-5" id="locations">
             <Row>
                 <Col lg={8} xs={12}>
                     <h3>Jesteśmy blisko Ciebie!</h3>
