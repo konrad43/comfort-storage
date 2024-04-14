@@ -1,0 +1,50 @@
+@import '../../style/variables';
+
+.container {
+    background-color: $red500;
+}
+
+.white {
+    color: $gray100;
+}
+
+.logoContainer {
+    background-color: $gray150;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+.logoWrapper {
+    display: flex;
+    padding: 1rem;
+    align-items: center;
+}
+
+.logo {
+    height: 48px;
+    width: 48px;
+    margin-right: 0.8rem;
+}
+
+.logoText {
+    margin: 0;
+    color: $gray900;
+    font-size: 21.95px;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.spacer {
+    border: 1px solid $gray100;
+}
+
+.footerBottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footerLink {
+    text-decoration: none;
+    color: $gray100;
+    margin-left: 1rem;
+}

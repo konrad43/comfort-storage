@@ -8,6 +8,7 @@ import { MapSection } from './components/MapSection/MapSection';
 import { PhotoSection } from './components/PhotoSection/PhotoSection';
 import { Referrals } from './components/Referrals/Referrals';
 import { FAQ } from './components/FAQ/FAQ';
+import { Footer } from './components/Footer/Footer';
 
 function App() {
     return (
@@ -21,6 +22,7 @@ function App() {
             <PhotoSection />
             <Referrals />
             <FAQ />
+            <Footer />
         </div>
     );
 }
