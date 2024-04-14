@@ -12,8 +12,12 @@ const questions = Array.from({ length: 6 }, () => 1);
 const QuestionContainer = () => {
     return (
         <div className={clsx(style.questionContainer, 'p-4')}>
-            <h4 className="heading-h4 mb-3">Przechowywanie</h4>
-            <div className="d-flex">
+            <Row>
+                <Col>
+                    <h4 className="heading-h4 mb-3">Przechowywanie</h4>
+                </Col>
+            </Row>
+            <Row>
                 <Col lg={6}>
                     <div className="me-5">
                         {questions.map((_, idx) => (
@@ -22,13 +26,13 @@ const QuestionContainer = () => {
                     </div>
                 </Col>
                 <Col lg={6}>
-                    <div className="ms-5">
+                    <div className={style.leftMargin3}>
                         {questions.map((_, idx) => (
                             <QuestionAccordion key={idx} />
                         ))}
                     </div>
                 </Col>
-            </div>
+            </Row>
         </div>
     );
 };
@@ -42,27 +46,45 @@ export const FAQ = () => {
                 </Col>
             </Row>
             <Row>
-                <QuestionContainer />
+                <Col>
+                    <QuestionContainer />
+                </Col>
             </Row>
             <Row>
                 <Col lg={6} className={style.containerColor}>
-                    <div className={clsx(style.questionContainer, 'my-4 me-3')}>
-                        <h4 className="heading-h4 mb-3 pt-3 ps-3">Umowa</h4>
-                        <div className="me-5">
-                            {questions.map((_, idx) => (
-                                <QuestionAccordion key={idx} />
-                            ))}
-                        </div>
+                    <div className={clsx(style.questionContainer, 'my-4 me-2')}>
+                        <Row>
+                            <Col>
+                                <h4 className="heading-h4 mb-3 pt-3 ps-3">Umowa</h4>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col>
+                                <div className="px-4 me-2">
+                                    {questions.map((_, idx) => (
+                                        <QuestionAccordion key={idx} />
+                                    ))}
+                                </div>
+                            </Col>
+                        </Row>
                     </div>
                 </Col>
                 <Col lg={6}>
-                    <div className={clsx(style.questionContainer, 'my-4 ms-3')}>
-                        <h4 className="heading-h4 mb-3 pt-3 ps-3">Płatności</h4>
-                        <div className="ms-5">
-                            {questions.map((_, idx) => (
-                                <QuestionAccordion key={idx} />
-                            ))}
-                        </div>
+                    <div className={clsx(style.questionContainer, 'my-4 ms-2')}>
+                        <Row>
+                            <Col>
+                                <h4 className="heading-h4 mb-3 pt-3 ps-3">Płatności</h4>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col>
+                                <div className="px-4">
+                                    {questions.map((_, idx) => (
+                                        <QuestionAccordion key={idx} />
+                                    ))}
+                                </div>
+                            </Col>
+                        </Row>
                     </div>
                 </Col>
             </Row>

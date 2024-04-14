@@ -5,9 +5,14 @@
 }
 
 .questionContainer {
-    background-color: $gray300;
+    background-color: $gray200;
+    border-radius: 1rem;
 }
 
 .containerColor {
     background-color: $gray100;
+}
+
+.leftMargin3 {
+    margin-left: 3rem;
 }
