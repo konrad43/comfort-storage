@@ -6,3 +6,25 @@
     font-weight: 400;
     line-height: 28px; /* 140% */
 }
+
+.heading-h4 {
+    color: var(--Grey-800, #2c2c2c);
+
+    /* H4/semi-bold */
+    font-family: Poppins;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px; /* 133.333% */
+}
+
+.cardText {
+    color: $gray600;
+
+    /* P/regular */
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 150% */
+}

@@ -25,7 +25,7 @@ export const CarouselCard = () => {
                     <p className={style.cardText}>01/01/2025</p>
                 </div>
                 <h6 className={clsx(style.cardTitle, 'pt-2')}>Barbara Maria</h6>
-                <Card.Text className={style.cardText}>
+                <Card.Text className="cardText">
                     Korzystam od roku z usług magazynu Comfort Storage. Wynajęłam w korzystnej cenie
                     box ok. 2 m2 i jestem z tego bardzo zadowolona. Łatwy dojazd, duży i wygodny
                     parking, miejsce jest doskonale zorganizowane, to znaczy...

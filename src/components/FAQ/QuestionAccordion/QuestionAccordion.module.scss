@@ -1,0 +1,40 @@
+@import '../../../style/variables';
+
+$bg-color: $gray100;
+
+.questionCard {
+    background-color: $bg-color;
+}
+
+.questionHeader {
+    display: flex;
+    justify-content: space-between;
+    background-color: $bg-color;
+    border-radius: 1rem !important;
+}
+
+.heading {
+    margin: auto 1.5rem;
+    width: 412px;
+    font-size: 18px;
+}
+
+.button {
+    width: 44px;
+    height: 44px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+    border: 1px solid $gray300;
+    background: $bg-color;
+
+    &:hover {
+        background-color: $ecru200;
+    }
+
+    &.active {
+        background-color: $ecru500;
+    }
+}
