@@ -1,0 +1,29 @@
+@import '../../style/variables';
+
+.formWrapper {
+    border-radius: 16px;
+    border: 1px solid $gray300;
+}
+
+.control {
+    border-radius: 4px !important;
+}
+
+.button {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.image {
+    height: 100%;
+    width: 100%;
+    border-radius: 16px;
+    background-image: url('../../assets//magazyn-duzy.png');
+    background-position: center;
+    background-size: cover;
+
+    @media only screen and (max-width: 992px) {
+        margin-top: 4rem;
+        height: 400px;
+    }
+}

@@ -10,7 +10,7 @@ import logo from '../../assets/comfort storage logo 1.png';
 export const MainNavbar = () => (
     <Navbar data-bs-theme="light" collapseOnSelect expand="lg" className={style.mobile}>
         <Container>
-            <Navbar.Brand href="#home">
+            <Navbar.Brand href="/">
                 <img src={logo} alt="logo" className={style.logo} />
                 Comfort Storage
             </Navbar.Brand>
@@ -26,13 +26,13 @@ export const MainNavbar = () => (
                 </Offcanvas.Header>
                 <Offcanvas.Body className={style.navBody}>
                     <Nav className="d-flex">
-                        <Nav.Link className="mx-2" href="#locations">
+                        <Nav.Link className="mx-2" href="/#locations">
                             Lokalizacje
                         </Nav.Link>
                         <Nav.Link className="mx-2" href="#features">
                             Cennik
                         </Nav.Link>
-                        <Nav.Link className="mx-2" href="#pricing">
+                        <Nav.Link className="mx-2" href="/contact">
                             Kontakt
                         </Nav.Link>
                     </Nav>
