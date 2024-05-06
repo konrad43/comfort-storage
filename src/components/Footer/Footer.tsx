@@ -14,7 +14,7 @@ export const Footer = () => {
         <Container fluid className={clsx(style.container, 'mt-5')}>
             <Container className="" as="footer">
                 <Row>
-                    <Col className="me-4">
+                    <Col className="me-lg-4" lg={3} xs={12}>
                         <div className={style.logoContainer}>
                             <div className={style.logoWrapper}>
                                 <Image src={logo} className={style.logo} />
@@ -26,14 +26,14 @@ export const Footer = () => {
                         </Button>
                         <SocialMedia />
                     </Col>
-                    <Col className="mt-3 ms-5">
+                    <Col className="mt-3 ms-lg-5" lg={3} xs={12}>
                         <div className={clsx(style.footerSection, style.white)}>
                             <h6 className="mb-2">Kontakt</h6>
                             <p>hello@comfortstorage.eu</p>
                             <p>+48 789 030 980</p>
                         </div>
                     </Col>
-                    <Col className="mt-3">
+                    <Col className="mt-3" lg={3} xs={12}>
                         <div className={clsx(style.footerSection, style.white)}>
                             <h6 className="mb-2">Placówki</h6>
                             <p>
@@ -43,7 +43,7 @@ export const Footer = () => {
                             <br /> 05-800 Pruszków
                         </div>
                     </Col>
-                    <Col className="mt-3">
+                    <Col className="mt-3" lg={2} xs={12}>
                         <div className={clsx(style.footerSection, style.white)}>
                             <h6 className="mb-2">Dane firmy</h6>
                             <p>

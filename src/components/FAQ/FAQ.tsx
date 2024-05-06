@@ -18,7 +18,7 @@ const QuestionContainer = () => {
             </Row>
             <Row>
                 <Col lg={6}>
-                    <div className={clsx('me-5', style.mobileMargin)}>
+                    <div className={clsx('me-2', style.mobileMargin)}>
                         {questions.map((_, idx) => (
                             <QuestionAccordion key={idx} />
                         ))}
@@ -51,7 +51,7 @@ export const FAQ = () => {
             </Row>
             <Row>
                 <Col lg={6} className={style.containerColor}>
-                    <div className={clsx(style.questionContainer, 'my-4 me-lg-2')}>
+                    <div className={clsx(style.questionContainer, 'my-4')}>
                         <Row>
                             <Col>
                                 <h4 className="heading-h4 mb-3 pt-3 ps-3">Umowa</h4>
@@ -59,7 +59,7 @@ export const FAQ = () => {
                         </Row>
                         <Row>
                             <Col>
-                                <div className="px-4 me-lg-2">
+                                <div className="px-4">
                                     {questions.map((_, idx) => (
                                         <QuestionAccordion key={idx} />
                                     ))}
