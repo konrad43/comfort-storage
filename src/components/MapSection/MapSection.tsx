@@ -3,12 +3,9 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
 import Card from 'react-bootstrap/Card';
-import InputGroup from 'react-bootstrap/InputGroup';
 import Image from 'react-bootstrap/Image';
 
-import search from '../../assets/icons/search.svg';
 import caret from '../../assets/icons/caret.svg';
 
 import { Map } from '../Map/Map';
@@ -67,6 +64,8 @@ export const MapSection = () => {
             return { Marker };
         }
 
+        console.log('get map');
+
         if (ref.current) {
             map = new window.google.maps.Map(ref.current, {
                 center,
@@ -86,7 +85,7 @@ export const MapSection = () => {
                 });
             });
         }
-    }, [ref]);
+    });
 
     const centerMap = (latLng: LatLng) => {
         map.setCenter(latLng);

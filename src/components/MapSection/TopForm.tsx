@@ -27,6 +27,11 @@ export const TopForm = (props: TopFormProps) => {
     useEffect(() => {
         async function loadInfoWindow() {
             if (!window.google.maps || !google.maps.places) {
+                // setTimeout(() => {
+                //     loadInfoWindow();
+                // }, 300);
+                console.log('no autocomplete');
+
                 return;
             }
             const infoWindow = new window.google.maps.InfoWindow();
