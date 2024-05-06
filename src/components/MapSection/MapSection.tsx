@@ -52,50 +52,46 @@ const HorizontalCard = (props: HorizontalCardProps) => {
 export const MapSection = () => {
     const [center, setCenter] = useState({ lat: 52.1691494, lng: 20.9525033 });
     const [zoom, setZoom] = useState(11);
+    const [map, setMap] = useState<google.maps.Map>();
     const ref = useRef<HTMLDivElement>(null);
 
-    let map: google.maps.Map;
-
     useEffect(() => {
-        async function getMapLibrary() {
+        async function getMap() {
             const { Marker } = (await google.maps.importLibrary(
                 'marker'
             )) as google.maps.MarkerLibrary;
-            return { Marker };
-        }
 
-        console.log('get map');
+            if (ref.current) {
+                const newMap = new window.google.maps.Map(ref.current, {
+                    center,
+                    zoom
+                });
 
-        if (ref.current) {
-            map = new window.google.maps.Map(ref.current, {
-                center,
-                zoom
-            });
-            console.log('🚀 ~ map:', map);
+                setMap(newMap);
 
-            map.setOptions({ styles: mapStyles });
+                newMap.setOptions({ styles: mapStyles });
 
-            getMapLibrary().then(({ Marker }) => {
                 places.forEach(position => {
                     new Marker({
-                        map: map,
+                        map: newMap,
                         position: position,
                         title: 'Elo'
                     });
                 });
-            });
+            }
         }
-    });
+        getMap();
+    }, []);
 
     const centerMap = (latLng: LatLng) => {
+        if (!map) {
+            return;
+        }
         map.setCenter(latLng);
         map.setZoom(13);
     };
 
     const onClick = (cardData: StorageCard) => {
-        console.log('🚀 ~ cardData:', cardData);
-        // setCenter(cardData.latLng);
-        // setZoom(13);
         centerMap(cardData.latLng);
     };
 
@@ -108,7 +104,7 @@ export const MapSection = () => {
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi placerat sem
                         vitae sem porta, ac tempor ex gravida.{' '}
                     </h5>
-                    <TopForm centerMap={centerMap} />
+                    <TopForm centerMap={centerMap} map={map} />
                 </Col>
             </Row>
             <Row>

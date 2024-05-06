@@ -8,14 +8,16 @@ import { useEffect, useRef, useState } from 'react';
 import { LatLng } from './cards';
 
 interface TopFormProps {
-    // map: google.maps.Map;
+    map?: google.maps.Map;
     centerMap: (position: LatLng) => void;
 }
 
 export const TopForm = (props: TopFormProps) => {
-    const { centerMap } = props;
+    const { centerMap, map } = props;
 
     let autocomplete: google.maps.places.Autocomplete;
+
+    const [marker, setMarker] = useState<google.maps.Marker>();
     const [location, setLocation] = useState<LatLng>();
     const infoContent = useRef<HTMLDivElement>(null);
     const input = useRef<HTMLInputElement>(null);
@@ -26,24 +28,28 @@ export const TopForm = (props: TopFormProps) => {
 
     useEffect(() => {
         async function loadInfoWindow() {
-            if (!window.google.maps || !google.maps.places) {
-                // setTimeout(() => {
-                //     loadInfoWindow();
-                // }, 300);
-                console.log('no autocomplete');
-
+            if (!window.google.maps) {
+                console.log('no map');
                 return;
             }
+
+            const places = (await google.maps.importLibrary('places')) as google.maps.PlacesLibrary;
+            const { Autocomplete } = places;
             const infoWindow = new window.google.maps.InfoWindow();
             infoWindow.setContent(infoContent.current);
 
             if (input.current) {
-                autocomplete = new google.maps.places.Autocomplete(input.current, options);
+                autocomplete = new Autocomplete(input.current, options);
 
                 autocomplete.addListener('place_changed', () => {
                     infoWindow.close();
                     const place = autocomplete.getPlace();
-                    setLocation(place.geometry?.location?.toJSON());
+                    if (place) {
+                        const currentLocation = place.geometry?.location?.toJSON();
+                        setLocation(currentLocation);
+                        map && placeMarker(currentLocation);
+                        currentLocation && centerMap(currentLocation);
+                    }
                 });
             }
         }
@@ -51,9 +57,25 @@ export const TopForm = (props: TopFormProps) => {
         loadInfoWindow();
     }, []);
 
+    const placeMarker = async (position?: LatLng) => {
+        if (!position) {
+            return;
+        }
+        const markerLib = (await window.google.maps.importLibrary(
+            'marker'
+        )) as google.maps.MarkerLibrary;
+
+        if (marker) {
+            marker.setPosition(position);
+        } else {
+            setMarker(new markerLib.Marker({ map, position }));
+        }
+    };
+
     const onSubmit = (event: React.SyntheticEvent) => {
         event.preventDefault();
 
+        map && placeMarker(location);
         location && centerMap(location);
     };
 
