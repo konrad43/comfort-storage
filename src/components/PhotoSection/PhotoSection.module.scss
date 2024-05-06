@@ -1,4 +1,25 @@
+.photoWrapper {
+    padding: 16px 0 16px 0;
+}
+
 .photoHeight {
     height: 250px;
-    padding: 10px 0 10px 0;
+}
+
+.h3 {
+    @media only screen and (max-width: 992px) {
+        text-align: center;
+        margin-bottom: 32px;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .photoWrapper {
+        margin: 0 16px;
+        padding: 0;
+    }
+
+    .photoHeight {
+        padding: 8px;
+    }
 }

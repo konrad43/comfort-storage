@@ -12,3 +12,9 @@
 .leftMargin3 {
     margin-left: 3rem;
 }
+
+.mobileMargin {
+    @media only screen and (max-width: 992px) {
+        margin: 0 !important;
+    }
+}

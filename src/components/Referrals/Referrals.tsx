@@ -16,8 +16,8 @@ export const Referrals = () => {
         <Container className={style.wrapper}>
             <Row>
                 <div className={style.referralsHeader}>
-                    <h3>Opinie z Google</h3>
-                    <h4>Dołącz do grona zadowolonych klientów</h4>
+                    <h3 className="heading-h3">Opinie z Google</h3>
+                    <h4 className="gray-subtitle">Dołącz do grona zadowolonych klientów</h4>
                     <Button className="mt-2" variant="danger">
                         Rezerwuj teraz
                     </Button>

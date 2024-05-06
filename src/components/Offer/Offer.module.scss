@@ -1,7 +1,7 @@
 @import '../../style//variables';
 
 .offerWrapper {
-    height: 512px;
+    // height: 512px;
     background-color: $ecru500;
 }
 
@@ -21,6 +21,16 @@
     height: 512px;
 }
 
+@media only screen and (max-width: 992px) {
+    .animation {
+        width: 100%;
+    }
+
+    .button {
+        margin-bottom: 64px;
+    }
+}
+
 .button {
-    margin-top: 64px;
+    margin-top: 2rem;
 }

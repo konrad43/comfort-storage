@@ -20,7 +20,7 @@ const socialIcons: SocialIcons[] = [
 
 export const SocialMedia = () => {
     const components = socialIcons.map(({ href, src }) => (
-        <a href={href}>
+        <a href={href} key={href}>
             <Image src={src} className="me-3 mb-4" />
         </a>
     ));

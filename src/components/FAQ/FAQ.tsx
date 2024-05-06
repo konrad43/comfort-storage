@@ -18,14 +18,14 @@ const QuestionContainer = () => {
             </Row>
             <Row>
                 <Col lg={6}>
-                    <div className="me-5">
+                    <div className={clsx('me-5', style.mobileMargin)}>
                         {questions.map((_, idx) => (
                             <QuestionAccordion key={idx} />
                         ))}
                     </div>
                 </Col>
                 <Col lg={6}>
-                    <div className={style.leftMargin3}>
+                    <div className={(style.leftMargin3, style.mobileMargin)}>
                         {questions.map((_, idx) => (
                             <QuestionAccordion key={idx} />
                         ))}
@@ -51,7 +51,7 @@ export const FAQ = () => {
             </Row>
             <Row>
                 <Col lg={6} className={style.containerColor}>
-                    <div className={clsx(style.questionContainer, 'my-4 me-2')}>
+                    <div className={clsx(style.questionContainer, 'my-4 me-lg-2')}>
                         <Row>
                             <Col>
                                 <h4 className="heading-h4 mb-3 pt-3 ps-3">Umowa</h4>
@@ -59,7 +59,7 @@ export const FAQ = () => {
                         </Row>
                         <Row>
                             <Col>
-                                <div className="px-4 me-2">
+                                <div className="px-4 me-lg-2">
                                     {questions.map((_, idx) => (
                                         <QuestionAccordion key={idx} />
                                     ))}
@@ -69,7 +69,7 @@ export const FAQ = () => {
                     </div>
                 </Col>
                 <Col lg={6}>
-                    <div className={clsx(style.questionContainer, 'my-4 ms-2')}>
+                    <div className={clsx(style.questionContainer, 'my-4 ms-lg-2')}>
                         <Row>
                             <Col>
                                 <h4 className="heading-h4 mb-3 pt-3 ps-3">Płatności</h4>

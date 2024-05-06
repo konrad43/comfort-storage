@@ -12,7 +12,9 @@ const Icon = (props: { text: string }) => {
 
 const Stars = (props: { starsCount: number }) => {
     const { starsCount } = props;
-    const starIcons = Array.from({ length: starsCount }, () => 0).map(() => <Image src={star} />);
+    const starIcons = Array.from({ length: starsCount }, () => 0).map((_, idx) => (
+        <Image src={star} key={idx} />
+    ));
     return <>{starIcons}</>;
 };
 

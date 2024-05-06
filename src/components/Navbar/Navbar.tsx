@@ -8,7 +8,7 @@ import style from './Navbar.module.scss';
 import logo from '../../assets/comfort storage logo 1.png';
 
 export const MainNavbar = () => (
-    <Navbar data-bs-theme="light" collapseOnSelect expand="lg">
+    <Navbar data-bs-theme="light" collapseOnSelect expand="lg" className={style.mobile}>
         <Container>
             <Navbar.Brand href="#home">
                 <img src={logo} alt="logo" className={style.logo} />

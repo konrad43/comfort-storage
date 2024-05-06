@@ -28,10 +28,10 @@ const HorizontalCard = (props: HorizontalCardProps) => {
     return (
         <Card className={clsx('mb-2', style.horizontalCard)} onClick={() => onClick(cardData)}>
             <Row className="g-0">
-                <Col md={4}>
+                <Col xs={4}>
                     <Image className={style.cardImage} src={image} />
                 </Col>
-                <Col md={8}>
+                <Col xs={8}>
                     <Card.Body>
                         <Card.Title>{city}</Card.Title>
                         <Card.Text>

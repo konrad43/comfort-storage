@@ -1,4 +1,10 @@
+@import '../../style/variables';
+
 .heroImg {
     height: 600px;
     width: 100%;
+}
+
+.subHeading {
+    color: $gray600;
 }

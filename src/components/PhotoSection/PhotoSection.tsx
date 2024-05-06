@@ -7,31 +7,32 @@ import Card from 'react-bootstrap/Card';
 
 import style from './PhotoSection.module.scss';
 import { Rect } from '../../layout/Rect';
+import clsx from 'clsx';
 
 export const PhotoSection = () => (
     <Container className="py-5">
         <Row>
-            <h3>Zobacz jak wyglądają nasze magazyny</h3>
+            <h3 className={clsx(style.h3, 'heading-h3')}>Zobacz jak wyglądają nasze magazyny</h3>
         </Row>
-        <Row className={style.photoHeight}>
-            <Col lg={6}>
+        <Row className={style.photoWrapper}>
+            <Col lg={6} className={style.photoHeight}>
                 <Rect />
             </Col>
-            <Col lg={3}>
+            <Col lg={3} xs={6} className={style.photoHeight}>
                 <Rect />
             </Col>
-            <Col lg={3}>
+            <Col lg={3} xs={6} className={style.photoHeight}>
                 <Rect />
             </Col>
         </Row>
-        <Row className={style.photoHeight}>
-            <Col lg={3}>
+        <Row className={style.photoWrapper}>
+            <Col lg={3} xs={6} className={style.photoHeight}>
                 <Rect />
             </Col>
-            <Col lg={3}>
+            <Col lg={3} xs={6} className={style.photoHeight}>
                 <Rect />
             </Col>
-            <Col lg={6}>
+            <Col lg={6} className={style.photoHeight}>
                 <Rect />
             </Col>
         </Row>
