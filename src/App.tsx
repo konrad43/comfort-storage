@@ -6,7 +6,9 @@ import { Contact } from './page/Contact';
 
 const router = createBrowserRouter([
     { path: '/', element: <Root /> },
-    { path: '/contact', element: <Contact /> }
+    { path: '/contact', element: <Contact /> },
+    { path: '/new-page/contact', element: <Contact /> },
+    { path: '/new-page', element: <Root /> }
 ]);
 
 function App() {
