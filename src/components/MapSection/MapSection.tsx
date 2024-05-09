@@ -61,6 +61,7 @@ export const MapSection = () => {
                 'marker'
             )) as google.maps.MarkerLibrary;
 
+            console.log('🚀 ~ ref:', ref);
             if (ref.current) {
                 const newMap = new window.google.maps.Map(ref.current, {
                     center,
@@ -78,6 +79,8 @@ export const MapSection = () => {
                         title: 'Elo'
                     });
                 });
+            } else {
+                setTimeout(getMap, 200);
             }
         }
         getMap();

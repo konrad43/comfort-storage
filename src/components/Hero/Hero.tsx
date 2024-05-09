@@ -24,7 +24,7 @@ export const Hero = () => (
                 </Button>
             </Col>
             <Col lg={6}>
-                <video className={clsx(style.heroImg, 'object-fit-contain')} autoPlay loop>
+                <video className={clsx(style.heroImg, 'object-fit-contain')} autoPlay loop muted>
                     <source src={heroVideo} />
                 </video>
             </Col>

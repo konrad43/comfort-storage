@@ -17,7 +17,11 @@ export const Offer = () => (
         <Container>
             <Row>
                 <Col lg={6}>
-                    <video className={clsx('object-fit-contain', style.animation)} autoPlay loop>
+                    <video
+                        className={clsx('object-fit-contain', style.animation)}
+                        muted
+                        autoPlay
+                        loop>
                         <source src={animation} />
                     </video>
                 </Col>
