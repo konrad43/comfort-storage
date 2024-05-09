@@ -8,7 +8,6 @@ import Image from 'react-bootstrap/Image';
 
 import caret from '../../assets/icons/caret.svg';
 
-import { Map } from '../Map/Map';
 import { LatLng, StorageCard, storageCards } from './cards';
 import style from './MapSection.module.scss';
 import { useEffect, useRef, useState } from 'react';
@@ -57,6 +56,7 @@ export const MapSection = () => {
 
     useEffect(() => {
         async function getMap() {
+            const { Map } = (await google.maps.importLibrary('maps')) as google.maps.MapsLibrary;
             const { Marker } = (await google.maps.importLibrary(
                 'marker'
             )) as google.maps.MarkerLibrary;
@@ -79,8 +79,6 @@ export const MapSection = () => {
                         title: 'Elo'
                     });
                 });
-            } else {
-                setTimeout(getMap, 200);
             }
         }
         getMap();
@@ -112,9 +110,7 @@ export const MapSection = () => {
             </Row>
             <Row>
                 <Col lg={8} xs={12}>
-                    <Map>
-                        <div className={style.map} ref={ref} id="map" />
-                    </Map>
+                    <div className={style.map} ref={ref} id="map" />
                 </Col>
                 <Col lg={4} xs={12}>
                     {storageCards.map(card => (
