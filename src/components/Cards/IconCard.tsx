@@ -2,6 +2,7 @@ import Card from 'react-bootstrap/Card';
 import Image from 'react-bootstrap/Image';
 
 import style from './Cards.module.scss';
+import clsx from 'clsx';
 
 export interface IconCardProps {
     icon: string;
@@ -15,8 +16,8 @@ export const IconCard = (props: IconCardProps) => {
         <Card className="">
             <Card.Body>
                 <Image src={icon} />
-                <Card.Title className={style.title}>{title}</Card.Title>
-                <Card.Text>{desc}</Card.Text>
+                <Card.Title className={clsx(style.title, 'heading-h6')}>{title}</Card.Title>
+                <Card.Text className="gray-text">{desc}</Card.Text>
             </Card.Body>
         </Card>
     );

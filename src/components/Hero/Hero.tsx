@@ -14,13 +14,13 @@ export const Hero = () => (
         <Row className="d-flex align-items-center mobile-margin">
             <Col lg={6}>
                 <h4 className={clsx(style.subHeading, 'heading-h4')}>Self storage Warszawa</h4>
-                <h1>
+                <h1 className="heading-h1">
                     Magazyny <br /> samoobsługowe
                 </h1>
                 <h3 className="gray-subtitle">Mikro magazyny juz od 1m3</h3>
                 <h3 className="gray-subtitle">od 23423 za dzien</h3>
                 <Button className="mt-3" variant="danger">
-                    Sprawdz rozmiary
+                    Sprawdź rozmiary
                 </Button>
             </Col>
             <Col lg={6}>

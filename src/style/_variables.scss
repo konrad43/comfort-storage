@@ -40,9 +40,12 @@ $h6-font-size: 1.25rem;
 
 // Button
 $btn-border-radius: 32px;
+$btn-font-weight: 500;
+$btn-padding-x: 24px;
 
 // Card
 $card-border-color: transparent;
+$card-bg: transparent;
 
 // Input
 $input-border-radius: 32px;
@@ -50,3 +53,5 @@ $input-group-addon-bg: transparent;
 
 // Cards
 $card-border-radius: 1rem;
+
+$red: $red500;

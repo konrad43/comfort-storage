@@ -10,7 +10,8 @@ import animation from '../../assets/animacja-rozmiary-magazynow.mp4';
 import style from './Offer.module.scss';
 import clsx from 'clsx';
 
-const subtitle = 'Koniecznie kliknij w przycisk poniżej i poznaj naszą dokładną ofertę.';
+const subtitle1 = 'Kliknij w przycisk poniżej';
+const subtitle2 = 'i poznaj naszą dokładną ofertę.';
 
 export const Offer = () => (
     <Container fluid className={style.offerWrapper}>
@@ -28,7 +29,8 @@ export const Offer = () => (
                 <Col className={style.flexContainer} lg={6}>
                     <div>
                         <h3 className="heading-h3">Szeroki wybór rozmiarów</h3>
-                        <h5 className={(style.subtitle, 'heading-h5')}>{subtitle}</h5>
+                        <h5 className={(style.subtitle, 'heading-h5')}>{subtitle1}</h5>
+                        <h5 className={(style.subtitle, 'heading-h5')}>{subtitle2}</h5>
                         <Button className={style.button} variant="danger">
                             Sprawdz rozmiary
                         </Button>

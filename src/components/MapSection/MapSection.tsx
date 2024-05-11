@@ -9,11 +9,11 @@ import Image from 'react-bootstrap/Image';
 import caret from '../../assets/icons/caret.svg';
 
 import { LatLng, StorageCard, storageCards } from './cards';
-import style from './MapSection.module.scss';
 import { useEffect, useRef, useState } from 'react';
 import { TopForm } from './TopForm';
 import { mapStyles, places } from '../Map/map.config';
 
+import style from './MapSection.module.scss';
 interface HorizontalCardProps extends StorageCard {
     onClick: (card: StorageCard) => void;
 }
@@ -27,10 +27,10 @@ const HorizontalCard = (props: HorizontalCardProps) => {
                 <Col xs={4}>
                     <Image className={style.cardImage} src={image} />
                 </Col>
-                <Col xs={8}>
-                    <Card.Body>
+                <Col xs={8} className="d-flex">
+                    <Card.Body className="ps-4 my-auto">
                         <Card.Title>{city}</Card.Title>
-                        <Card.Text>
+                        <Card.Text className="gray-text">
                             {address},
                             <br />
                             {zipCode} {city}
@@ -76,7 +76,7 @@ export const MapSection = () => {
                     new Marker({
                         map: newMap,
                         position: position,
-                        title: 'Elo'
+                        title: 'Magazyn'
                     });
                 });
             }
@@ -100,10 +100,10 @@ export const MapSection = () => {
         <Container className="my-5" id="locations">
             <Row>
                 <Col lg={8} xs={12}>
-                    <h3>Jesteśmy blisko Ciebie!</h3>
+                    <h3 className="heading-h3">Jesteśmy blisko Ciebie!</h3>
                     <h5 className="gray-subtitle">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi placerat sem
-                        vitae sem porta, ac tempor ex gravida.{' '}
+                        Wpisz adres poniżej i sprawdź, która nasza placówka znajduje <br />
+                        się najbliżej Ciebie lub wybierz z listy po prawej.
                     </h5>
                     <TopForm centerMap={centerMap} map={map} />
                 </Col>

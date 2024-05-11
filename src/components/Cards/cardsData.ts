@@ -9,32 +9,32 @@ import { IconCardProps } from './IconCard';
 export const cards: IconCardProps[] = [
     {
         icon: location,
-        title: 'Card Title',
-        desc: "Some quick example text to build on the card title and make up the bulk of the card's content."
+        title: 'Blisko Ciebie',
+        desc: 'Nie musisz już jeździć daleko aby przechować swoje rzeczy. Comfort Storage jest w Twojej okolicy!'
     },
     {
         icon: allDay,
-        title: 'Card Title',
-        desc: "Some quick example text to build on the card title and make up the bulk of the card's content."
+        title: 'Czynne całą dobę',
+        desc: 'Masz dostęp do Swojego magazynu 24h na dobę, 365 dni w roku. Również w niedziele i Święta!'
     },
     {
         icon: temperature,
-        title: 'Card Title',
-        desc: "Some quick example text to build on the card title and make up the bulk of the card's content."
+        title: 'Ciepło i sucho',
+        desc: 'Magazyny znajdują się w ogrzewanym budynku, gdzie przez cały rok utrzymywana jest stała temperatura i nie ma wilgoci.'
     },
     {
         icon: safety,
-        title: 'Card Title',
-        desc: "Some quick example text to build on the card title and make up the bulk of the card's content."
+        title: 'Prywatność i bezpieczeństwo',
+        desc: 'Nikt poza Tobą nie ma dostępu do Twojego magazynu. Każdy klient operuje własną kłódką i kluczem. Obiekt jest stale monitorowany.'
     },
     {
         icon: trolley,
-        title: 'Card Title',
-        desc: "Some quick example text to build on the card title and make up the bulk of the card's content."
+        title: 'Darmowe wózki i drabiny',
+        desc: 'Na miejscu możesz korzystać z bezpłatnego sprzętu, który ułatwi Ci korzystanie ze Swojego magazynu i przenoszenie rzeczy.'
     },
     {
         icon: parking,
-        title: 'Card Title',
-        desc: "Some quick example text to build on the card title and make up the bulk of the card's content."
+        title: 'Wygodny dojazd',
+        desc: 'Na miejscu dostępny jest duży parking ze strefą rozładunkową, a wjazd z głównej ulicy przez szeroką bramę ułatwia dojazd.'
     }
 ];

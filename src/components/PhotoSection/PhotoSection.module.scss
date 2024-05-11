@@ -3,7 +3,8 @@
 }
 
 .photoHeight {
-    height: 250px;
+    height: 308px;
+    text-align: center;
 }
 
 .h3 {
@@ -22,4 +23,31 @@
     .photoHeight {
         padding: 8px;
     }
+}
+
+.image {
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    background-position: center;
+    background-size: cover;
+}
+
+.img1 {
+    background-image: url('../../assets/gallery/gal-1.png');
+}
+.img2 {
+    background-image: url('../../assets/gallery/gal-2.png');
+}
+.img3 {
+    background-image: url('../../assets/gallery/gal-3.png');
+}
+.img4 {
+    background-image: url('../../assets/gallery/gal-4.png');
+}
+.img5 {
+    background-image: url('../../assets/gallery/gal-5.png');
+}
+.img6 {
+    background-image: url('../../assets/gallery/gal-6.png');
 }

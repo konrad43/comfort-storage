@@ -1,11 +1,14 @@
+import { useEffect, useRef, useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Image from 'react-bootstrap/Image';
 import Button from 'react-bootstrap/Button';
+import clsx from 'clsx';
 
 import search from '../../assets/icons/search.svg';
-import { useEffect, useRef, useState } from 'react';
 import { LatLng } from './cards';
+
+import style from './MapSection.module.scss';
 
 interface TopFormProps {
     map?: google.maps.Map;
@@ -84,7 +87,12 @@ export const TopForm = (props: TopFormProps) => {
             <Form.Group className="mb-3 d-flex" controlId="map-form">
                 <Form.Label hidden>Address</Form.Label>
                 <InputGroup>
-                    <Form.Control ref={input} type="text" placeholder="wpisz adres..." />
+                    <Form.Control
+                        className={clsx(style.input, 'ps-3')}
+                        ref={input}
+                        type="text"
+                        placeholder="wpisz adres..."
+                    />
                     <InputGroup.Text>
                         <Image src={search} />
                     </InputGroup.Text>

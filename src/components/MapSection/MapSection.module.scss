@@ -14,11 +14,13 @@
 }
 
 .cardImage {
-    border-radius: $card-border-radius;
+    border-bottom-left-radius: $card-border-radius;
+    border-top-left-radius: $card-border-radius;
 }
 
 .cardButton {
     color: $red500;
+    font-weight: 600;
     text-decoration: none;
     padding-left: 0;
 }
@@ -28,4 +30,8 @@
         height: 250px;
         margin-bottom: 32px;
     }
+}
+
+.input {
+    height: 48px;
 }
