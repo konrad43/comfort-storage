@@ -22,7 +22,7 @@ interface FormData {
 }
 
 const sendData = (formData: FormData) => {
-    fetch('http://localhost:3001/', {
+    fetch('/', {
         method: 'POST',
         body: JSON.stringify(formData),
         headers: {

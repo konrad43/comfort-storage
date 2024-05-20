@@ -34,7 +34,6 @@ export const MainNavbar = () => (
                             </Nav.Link>
                             <Nav.Link className="mx-2 mb-3 mb-lg-0" href="#features">
                                 <span className={style.link}>Cennik</span>
-                                Cennik
                             </Nav.Link>
                             <Nav.Link className="mx-2 mb-3 mb-lg-0" href="/contact">
                                 <span className={style.link}>Kontakt</span>

@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const path = require('path');
+const { sendMail } = require('./mailer');
 
 const app = express();
 const port = 3000;
@@ -14,7 +15,7 @@ app.get('/*', (req, res) => {
 
 app.post('/', (req, res) => {
     console.log('req');
-    console.log(req.body);
+    sendMail(req.body);
     res.status(200).send('ok');
 });
 
