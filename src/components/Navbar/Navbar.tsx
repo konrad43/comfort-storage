@@ -8,6 +8,7 @@ import Col from 'react-bootstrap/Col';
 import style from './Navbar.module.scss';
 import logo from '../../assets/comfort storage logo 1.png';
 import clsx from 'clsx';
+import { SocialMedia } from '../Footer/SocialMedia';
 
 export const MainNavbar = () => (
     <Navbar data-bs-theme="light" collapseOnSelect expand="lg" className={style.mobile}>
@@ -18,7 +19,7 @@ export const MainNavbar = () => (
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Offcanvas id="responsive-navbar-nav" placement="end">
-                <Offcanvas.Header closeButton>
+                <Offcanvas.Header closeButton className={style.mobileNav}>
                     <Offcanvas.Title id={`offcanvasNavbarLabel-expand`}>
                         <Navbar.Brand href="#home">
                             <img src={logo} alt="logo" className={style.logo} />
@@ -41,7 +42,7 @@ export const MainNavbar = () => (
                         </Nav>
                     </Col>
                     <Col className="mt-lg-0 mt-xs-4" lg={2}>
-                        <div className="elo">
+                        <div className={style.mobileNav}>
                             <Button variant="danger">Rezerwuj teraz</Button>
                         </div>
                     </Col>

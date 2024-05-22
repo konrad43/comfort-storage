@@ -19,3 +19,10 @@
 .link {
     color: $gray800;
 }
+
+.mobileNav {
+    @media only screen and (max-width: 992px) {
+        display: flex;
+        justify-content: center;
+    }
+}
