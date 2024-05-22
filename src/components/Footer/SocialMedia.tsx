@@ -4,6 +4,8 @@ import facebook from '../../assets/icons/facebook.svg';
 import yt from '../../assets/icons/youtube.svg';
 import instagram from '../../assets/icons/instagram.svg';
 
+import style from './Footer.module.scss';
+
 interface SocialIcons {
     src: string;
     href: string;
@@ -20,7 +22,7 @@ const socialIcons: SocialIcons[] = [
 
 export const SocialMedia = () => {
     const components = socialIcons.map(({ href, src }) => (
-        <a href={href} key={href}>
+        <a href={href} key={href} target="_blank">
             <Image src={src} className="me-3 mb-4" />
         </a>
     ));

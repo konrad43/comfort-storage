@@ -6,7 +6,7 @@ import Button from 'react-bootstrap/Button';
 import Image from 'react-bootstrap/Image';
 
 // @ts-expect-error let's go
-import heroVideo from '../../assets/animacja-na-gore-strony.mp4';
+import heroVideo from '../../assets/animacja-na-gore-strony-highres.mp4';
 import style from './Hero.module.scss';
 
 export const Hero = () => (
@@ -17,8 +17,8 @@ export const Hero = () => (
                 <h1 className="heading-h1">
                     Magazyny <br /> samoobsługowe
                 </h1>
-                <h3 className="gray-subtitle">Mikro magazyny juz od 1m3</h3>
-                <h3 className="gray-subtitle">od 23423 za dzien</h3>
+                <h3 className="gray-subtitle">Mikro magazyny już od 1 m³</h3>
+                <h3 className="gray-subtitle">od 2,68 zł za dzień!</h3>
                 <Button className="mt-3" variant="danger">
                     Sprawdź rozmiary
                 </Button>

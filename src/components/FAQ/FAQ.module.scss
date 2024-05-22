@@ -1,7 +1,7 @@
 @import '../../style/variables';
 
 .questionContainer {
-    background-color: $gray200;
+    background-color: $gray180;
     border-radius: 1rem;
 }
 
@@ -16,5 +16,11 @@
 .mobileMargin {
     @media only screen and (max-width: 992px) {
         margin: 0 !important;
+    }
+}
+
+.wrapper {
+    @media only screen and (min-width: 992px) {
+        margin-top: 6rem;
     }
 }

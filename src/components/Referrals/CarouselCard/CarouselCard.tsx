@@ -24,7 +24,7 @@ export const CarouselCard = () => {
             <Card.Body>
                 <div className={style.iconWrapper}>
                     <Icon text="B" />
-                    <p className={style.cardText}>01/01/2025</p>
+                    <p className={clsx(style.cardText, style.date)}>01/01/2025</p>
                 </div>
                 <h6 className={clsx(style.cardTitle, 'pt-2')}>Barbara Maria</h6>
                 <Card.Text className="cardText">

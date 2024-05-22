@@ -38,10 +38,10 @@ const QuestionContainer = () => {
 
 export const FAQ = () => {
     return (
-        <Container className={clsx(style.wrapper, 'mt-5')}>
+        <Container className={clsx(style.wrapper)}>
             <Row>
                 <Col>
-                    <h3 className="h3 mb-3">Najczęściej zadawane pytania</h3>
+                    <h3 className="h3 mb-3 heading-h3">Najczęściej zadawane pytania</h3>
                 </Col>
             </Row>
             <Row>

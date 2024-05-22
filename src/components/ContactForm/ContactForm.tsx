@@ -22,7 +22,7 @@ interface FormData {
 }
 
 const sendData = (formData: FormData) => {
-    fetch('/', {
+    fetch('/contact', {
         method: 'POST',
         body: JSON.stringify(formData),
         headers: {

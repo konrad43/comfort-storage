@@ -28,14 +28,14 @@ export const Footer = () => {
                     </Col>
                     <Col className="mt-3 ms-lg-5" lg={3} xs={12}>
                         <div className={clsx(style.footerSection, style.white)}>
-                            <h6 className="mb-2">Kontakt</h6>
+                            <h6 className={clsx('mb-2', style.footerHeading)}>Kontakt</h6>
                             <p>hello@comfortstorage.eu</p>
                             <p>+48 789 030 980</p>
                         </div>
                     </Col>
                     <Col className="mt-3" lg={3} xs={12}>
                         <div className={clsx(style.footerSection, style.white)}>
-                            <h6 className="mb-2">Placówki</h6>
+                            <h6 className={clsx('mb-2', style.footerHeading)}>Placówki</h6>
                             <p>
                                 ul. Jana Pawła II 45, <br /> 05-500 Piaseczno
                             </p>
@@ -45,7 +45,7 @@ export const Footer = () => {
                     </Col>
                     <Col className="mt-3" lg={2} xs={12}>
                         <div className={clsx(style.footerSection, style.white)}>
-                            <h6 className="mb-2">Dane firmy</h6>
+                            <h6 className={clsx('mb-2', style.footerHeading)}>Dane firmy</h6>
                             <p>
                                 Comfort Storage Sp. z o.o.
                                 <br />
@@ -67,13 +67,13 @@ export const Footer = () => {
                             © 2024 Comfort Storage. All rights reserved.
                         </p>
                         <div>
-                            <a className={style.footerLink} href="#">
+                            <a className={style.footerLink} href="#" target="_blank">
                                 Cennik
                             </a>
-                            <a className={style.footerLink} href="#">
+                            <a className={style.footerLink} href="#" target="_blank">
                                 Blog
                             </a>
-                            <a className={style.footerLink} href="#">
+                            <a className={style.footerLink} href="#" target="_blank">
                                 Kontakt
                             </a>
                         </div>

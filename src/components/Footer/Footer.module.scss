@@ -35,7 +35,7 @@
 }
 
 .spacer {
-    border: 1px solid $gray100;
+    border-top: 1px solid $gray200;
 }
 
 .footerBottom {
@@ -47,4 +47,12 @@
     text-decoration: none;
     color: $gray100;
     margin-left: 1rem;
+
+    &:hover {
+        color: $gray800;
+    }
+}
+
+.footerHeading {
+    font-weight: 600;
 }

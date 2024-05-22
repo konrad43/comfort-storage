@@ -1,9 +1,6 @@
 const nodemailer = require('nodemailer');
 require('dotenv').config();
 
-console.error('process.env');
-console.error(process.env);
-
 const transporter = nodemailer.createTransport({
     host: process.env.MAILER_HOST,
     port: 465,
