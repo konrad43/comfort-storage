@@ -26,7 +26,7 @@ export const Footer = () => {
                         </Button>
                         <SocialMedia />
                     </Col>
-                    <Col className="mt-3 ms-lg-5" lg={3} xs={12}>
+                    <Col className="mt-3 ms-lg-1 me-lg-5" lg={2} xs={12}>
                         <div className={clsx(style.footerSection, style.white)}>
                             <h6 className={clsx('mb-2', style.footerHeading)}>Kontakt</h6>
                             <p>hello@comfortstorage.eu</p>
@@ -43,7 +43,7 @@ export const Footer = () => {
                             <br /> 05-800 Pruszków
                         </div>
                     </Col>
-                    <Col className="mt-3" lg={2} xs={12}>
+                    <Col className="mt-3" lg={3} xs={12}>
                         <div className={clsx(style.footerSection, style.white)}>
                             <h6 className={clsx('mb-2', style.footerHeading)}>Dane firmy</h6>
                             <p>
