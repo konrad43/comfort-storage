@@ -3,6 +3,10 @@
 .heroImg {
     height: 600px;
     width: 100%;
+
+    @media only screen and (max-width: 992px) {
+        height: 400px;
+    }
 }
 
 .subHeading {

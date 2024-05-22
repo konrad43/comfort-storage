@@ -61,23 +61,25 @@ export const Footer = () => {
                     </Col>
                 </Row>
                 <Row>
-                    <div className={clsx(style.spacer, 'mb-4')} />
-                    <div className={clsx(style.white, style.footerBottom, 'p-0')}>
-                        <p className={clsx('ps-0')}>
-                            © 2024 Comfort Storage. All rights reserved.
-                        </p>
-                        <div>
-                            <a className={style.footerLink} href="#" target="_blank">
-                                Cennik
-                            </a>
-                            <a className={style.footerLink} href="#" target="_blank">
-                                Blog
-                            </a>
-                            <a className={style.footerLink} href="#" target="_blank">
-                                Kontakt
-                            </a>
+                    <Col>
+                        <div className={clsx(style.spacer, 'mb-4')} />
+                        <div className={clsx(style.white, style.footerBottom, 'p-0 mb-3')}>
+                            <p className={clsx('ps-0')}>
+                                © 2024 Comfort Storage. All rights reserved.
+                            </p>
+                            <div>
+                                <a className={style.footerLink} href="#" target="_blank">
+                                    Cennik
+                                </a>
+                                <a className={style.footerLink} href="#" target="_blank">
+                                    Blog
+                                </a>
+                                <a className={style.footerLink} href="#" target="_blank">
+                                    Kontakt
+                                </a>
+                            </div>
                         </div>
-                    </div>
+                    </Col>
                 </Row>
             </Container>
         </Container>

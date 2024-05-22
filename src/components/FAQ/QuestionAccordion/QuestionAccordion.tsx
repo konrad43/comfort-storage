@@ -26,7 +26,7 @@ function AccordionToggle({ children, eventKey, callback }: AccordionToggleProps)
 
     return (
         <button
-            className={clsx(style.button, { [style.active]: isCurrentEventKey }, 'ms-4')}
+            className={clsx(style.button, { [style.active]: isCurrentEventKey }, 'ms-lg-4')}
             type="button"
             onClick={decoratedOnClick}>
             <Image src={isCurrentEventKey ? minus : plus} />

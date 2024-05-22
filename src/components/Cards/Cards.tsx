@@ -8,10 +8,10 @@ import { cards } from './cardsData';
 
 export const Cards: FC = () => {
     return (
-        <Container className="my-5">
+        <Container className="my-lg-5">
             <Row className="g-3 row-cols-lg-3">
                 {cards.map((card, idx) => (
-                    <Col key={idx} xs={12} className="p-3">
+                    <Col key={idx} xs={12} className="p-lg-3">
                         <IconCard {...card} />
                     </Col>
                 ))}

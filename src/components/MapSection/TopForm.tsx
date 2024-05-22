@@ -91,7 +91,7 @@ export const TopForm = (props: TopFormProps) => {
                         className={clsx(style.input, 'ps-3')}
                         ref={input}
                         type="text"
-                        placeholder="wpisz adres..."
+                        placeholder="Wpisz adres..."
                     />
                     <InputGroup.Text>
                         <Image src={search} />

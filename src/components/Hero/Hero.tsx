@@ -10,8 +10,8 @@ import heroVideo from '../../assets/animacja-na-gore-strony-highres.mp4';
 import style from './Hero.module.scss';
 
 export const Hero = () => (
-    <Container className={clsx('py-5')}>
-        <Row className="d-flex align-items-center mobile-margin">
+    <Container className={clsx('py-lg-5 pt-4')}>
+        <Row className="d-flex align-items-center">
             <Col lg={6}>
                 <h4 className={clsx(style.subHeading, 'heading-h4')}>Self storage Warszawa</h4>
                 <h1 className="heading-h1">

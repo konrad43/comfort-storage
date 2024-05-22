@@ -20,10 +20,12 @@ $bg-color: $gray100;
 }
 
 .heading {
-    margin: auto 1.5rem;
-    width: 412px;
     font-size: 18px;
     font-weight: 600;
+    @media only screen and (min-width: 992px) {
+        margin: auto 1.5rem;
+        width: 412px;
+    }
 }
 
 .button {

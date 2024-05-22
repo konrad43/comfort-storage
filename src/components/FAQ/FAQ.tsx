@@ -10,7 +10,7 @@ const questions = Array.from({ length: 6 }, () => 1);
 
 const QuestionContainer = () => {
     return (
-        <div className={clsx(style.questionContainer, 'p-4')}>
+        <div className={clsx(style.questionContainer, 'p-lg-4 p-2')}>
             <Row>
                 <Col>
                     <h4 className="heading-h4 mb-3">Przechowywanie</h4>
@@ -59,7 +59,7 @@ export const FAQ = () => {
                         </Row>
                         <Row>
                             <Col>
-                                <div className="px-4">
+                                <div className="px-lg-4 px-2">
                                     {questions.map((_, idx) => (
                                         <QuestionAccordion key={idx} />
                                     ))}
@@ -77,7 +77,7 @@ export const FAQ = () => {
                         </Row>
                         <Row>
                             <Col>
-                                <div className="px-4">
+                                <div className="px-lg-4 px-2">
                                     {questions.map((_, idx) => (
                                         <QuestionAccordion key={idx} />
                                     ))}
