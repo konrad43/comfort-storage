@@ -5,8 +5,12 @@ import Col from 'react-bootstrap/Col';
 
 import style from './FAQ.module.scss';
 import { QuestionAccordion } from './QuestionAccordion/QuestionAccordion';
+import { storage } from './questions/storage';
+import { contract } from './questions/contract';
+import { payments } from './questions/payments';
 
-const questions = Array.from({ length: 6 }, () => 1);
+const storageLeft = storage.slice(0, 6);
+const storageRight = storage.slice(6);
 
 const QuestionContainer = () => {
     return (
@@ -19,15 +23,15 @@ const QuestionContainer = () => {
             <Row>
                 <Col lg={6}>
                     <div className={clsx('me-2', style.mobileMargin)}>
-                        {questions.map((_, idx) => (
-                            <QuestionAccordion key={idx} />
+                        {storageLeft.map((q, idx) => (
+                            <QuestionAccordion question={q} key={idx} />
                         ))}
                     </div>
                 </Col>
                 <Col lg={6}>
                     <div className={(style.leftMargin3, style.mobileMargin)}>
-                        {questions.map((_, idx) => (
-                            <QuestionAccordion key={idx} />
+                        {storageRight.map((q, idx) => (
+                            <QuestionAccordion question={q} key={idx} />
                         ))}
                     </div>
                 </Col>
@@ -60,8 +64,8 @@ export const FAQ = () => {
                         <Row>
                             <Col>
                                 <div className="px-lg-4 px-2">
-                                    {questions.map((_, idx) => (
-                                        <QuestionAccordion key={idx} />
+                                    {contract.map((q, idx) => (
+                                        <QuestionAccordion question={q} key={idx} />
                                     ))}
                                 </div>
                             </Col>
@@ -78,8 +82,8 @@ export const FAQ = () => {
                         <Row>
                             <Col>
                                 <div className="px-lg-4 px-2">
-                                    {questions.map((_, idx) => (
-                                        <QuestionAccordion key={idx} />
+                                    {payments.map((q, idx) => (
+                                        <QuestionAccordion question={q} key={idx} />
                                     ))}
                                 </div>
                             </Col>

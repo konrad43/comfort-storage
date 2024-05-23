@@ -1,4 +1,4 @@
-import { ReactNode, useContext } from 'react';
+import { FC, ReactNode, useContext } from 'react';
 import Accordion from 'react-bootstrap/Accordion';
 import AccordionContext from 'react-bootstrap/AccordionContext';
 import { useAccordionButton } from 'react-bootstrap/AccordionButton';
@@ -34,22 +34,23 @@ function AccordionToggle({ children, eventKey, callback }: AccordionToggleProps)
     );
 }
 
-export const QuestionAccordion = () => {
+export interface Question {
+    title: string;
+    desc: string;
+}
+
+export const QuestionAccordion: FC<{ question: Question }> = ({ question }) => {
+    const { title, desc } = question;
     return (
         <Accordion defaultActiveKey="1">
             <Card className={clsx(style.questionCard, 'my-2')}>
                 <Card.Header className={style.questionHeader}>
-                    <h6 className={style.heading}>Czym jest magazyn typu self-storage?</h6>
+                    <h6 className={style.heading}>{title}</h6>
                     <AccordionToggle eventKey="0">+</AccordionToggle>
                 </Card.Header>
                 <Accordion.Collapse eventKey="0">
                     <Card.Body className="cardText">
-                        <p className="px-3">
-                            Jest to magazyn samoobsługowy. Po wynajęciu ówcześnie wybranej
-                            przestrzeni magazynowej w magazynie Comfort Storage otrzymujesz
-                            całodobowy dostęp do swojego magazynu, do którego tylko i wyłącznie TY
-                            masz dostęp.
-                        </p>
+                        <p className="px-3">{desc}</p>
                     </Card.Body>
                 </Accordion.Collapse>
             </Card>
