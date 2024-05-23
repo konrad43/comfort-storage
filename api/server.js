@@ -26,7 +26,9 @@ app.get('/*', (req, res) => {
 app.post('*', (req, res) => {
     console.log('req');
     sendMail(req.body);
-    res.status(200).send('ok');
+    res.setHeader('Content-Type', 'application/json');
+    const response = JSON.stringify({ message: 'mail sent' });
+    res.status(200).send(response);
 });
 
 app.listen(port, () => {

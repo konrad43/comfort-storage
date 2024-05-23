@@ -1,8 +1,3 @@
-export const places = [
-    { lat: 52.074398, lng: 21.0144066 },
-    { lat: 52.1675058, lng: 20.8055244 }
-];
-
 export const mapStyles = [
     {
         featureType: 'water',

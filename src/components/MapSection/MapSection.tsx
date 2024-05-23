@@ -11,7 +11,7 @@ import caret from '../../assets/icons/caret.svg';
 import { LatLng, StorageCard, storageCards } from './cards';
 import { useEffect, useRef, useState } from 'react';
 import { TopForm } from './TopForm';
-import { mapStyles, places } from '../Map/map.config';
+import { mapStyles } from '../Map/map.config';
 
 import style from './MapSection.module.scss';
 interface HorizontalCardProps extends StorageCard {
@@ -61,7 +61,6 @@ export const MapSection = () => {
                 'marker'
             )) as google.maps.MarkerLibrary;
 
-            console.log('🚀 ~ ref:', ref);
             if (ref.current) {
                 const newMap = new window.google.maps.Map(ref.current, {
                     center,
@@ -72,10 +71,10 @@ export const MapSection = () => {
 
                 newMap.setOptions({ styles: mapStyles });
 
-                places.forEach(position => {
+                storageCards.forEach(({ latLng }) => {
                     new Marker({
                         map: newMap,
-                        position: position,
+                        position: latLng,
                         title: 'Magazyn'
                     });
                 });

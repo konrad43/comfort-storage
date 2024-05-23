@@ -10,14 +10,13 @@ export interface StorageCard {
     zipCode: string;
     latLng: LatLng;
 }
-
 export const storageCards: StorageCard[] = [
     {
         city: 'Piaseczno',
         address: 'Jana Pawła II 45',
         zipCode: '05-500',
         image: piaseczno,
-        latLng: { lat: 52.0739427, lng: 21.0156116 }
+        latLng: { lat: 52.07394842206938, lng: 21.015793215501 }
     },
     {
         city: 'Pruszków',

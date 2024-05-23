@@ -35,13 +35,11 @@ export const CarouselCard: FC<{ slide: Slide }> = ({ slide }) => {
                     <Icon text={firstLetter} />
                     <p className={clsx(style.cardText, style.date)}>{date || '01/01/2024'}</p>
                 </div>
-                <div className={style.cardBody}>
-                    <h6 className={clsx(style.cardTitle, 'pt-2')}>{name}</h6>
-                    <Card.Text className={clsx('cardText', style.text)}>{desc}</Card.Text>
-                    <div className={style.stars}>
-                        <p className={clsx(style.cardText, style.rating, 'm-0')}> 5.0 </p>
-                        <Stars starsCount={5} />
-                    </div>
+                <h6 className={clsx(style.cardTitle, 'pt-2')}>{name}</h6>
+                <Card.Text className={clsx('cardText', style.cardBody)}>{desc}</Card.Text>
+                <div className={style.stars}>
+                    <p className={clsx(style.cardText, style.rating, 'm-0')}> 5.0 </p>
+                    <Stars starsCount={5} />
                 </div>
             </Card.Body>
         </Card>

@@ -15,8 +15,8 @@ type CarouselProps = {
 
 export const Carousel: React.FC<CarouselProps> = props => {
     const { slides, options } = props;
-    const [emblaRef, emblaApi] = useEmblaCarousel(options);
-    // const [emblaRef, emblaApi] = useEmblaCarousel(options, [Autoplay()]);
+    // const [emblaRef, emblaApi] = useEmblaCarousel(options);
+    const [emblaRef, emblaApi] = useEmblaCarousel(options, [Autoplay()]);
 
     const onNavButtonClick = useCallback((emblaApi: EmblaCarouselType) => {
         const autoplay = emblaApi?.plugins()?.autoplay;
