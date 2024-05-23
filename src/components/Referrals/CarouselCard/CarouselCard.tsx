@@ -37,7 +37,7 @@ export const CarouselCard: FC<{ slide: Slide }> = ({ slide }) => {
                 </div>
                 <div className={style.cardBody}>
                     <h6 className={clsx(style.cardTitle, 'pt-2')}>{name}</h6>
-                    <Card.Text className="cardText">{desc}</Card.Text>
+                    <Card.Text className={clsx('cardText', style.text)}>{desc}</Card.Text>
                     <div className={style.stars}>
                         <p className={clsx(style.cardText, style.rating, 'm-0')}> 5.0 </p>
                         <Stars starsCount={5} />

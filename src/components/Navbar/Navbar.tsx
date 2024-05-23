@@ -11,7 +11,12 @@ import clsx from 'clsx';
 import { SocialMedia } from '../Footer/SocialMedia';
 
 export const MainNavbar = () => (
-    <Navbar data-bs-theme="light" collapseOnSelect expand="lg" className={style.mobile}>
+    <Navbar
+        data-bs-theme="light"
+        collapseOnSelect
+        expand="lg"
+        className={clsx(style.mobile, style.navbar)}
+        sticky="top">
         <Container>
             <Navbar.Brand href="/">
                 <img src={logo} alt="logo" className={style.logo} />
@@ -23,12 +28,12 @@ export const MainNavbar = () => (
                     <Offcanvas.Title id={`offcanvasNavbarLabel-expand`}>
                         <Navbar.Brand href="#home">
                             <img src={logo} alt="logo" className={style.logo} />
-                            Comfort Storage
+                            <span className="semi-bold">Comfort Storage</span>
                         </Navbar.Brand>
                     </Offcanvas.Title>
                 </Offcanvas.Header>
                 <Offcanvas.Body className={clsx(style.navBody)}>
-                    <Col className="d-flex justify-content-lg-center" lg={10}>
+                    <Col className="d-flex justify-content-center" lg={9}>
                         <Nav className="d-flex mb-3 mb-lg-0">
                             <Nav.Link className="mx-2 mb-3 mb-lg-0" href="/#locations">
                                 <span className={style.link}>Lokalizacje</span>
@@ -41,9 +46,11 @@ export const MainNavbar = () => (
                             </Nav.Link>
                         </Nav>
                     </Col>
-                    <Col className="mt-lg-0 mt-xs-4" lg={2}>
+                    <Col className="mt-lg-0 mt-xs-4" lg={3}>
                         <div className={style.mobileNav}>
-                            <Button variant="danger">Rezerwuj teraz</Button>
+                            <Button className={style.navBtn} variant="danger">
+                                Rezerwuj teraz
+                            </Button>
                         </div>
                     </Col>
                 </Offcanvas.Body>

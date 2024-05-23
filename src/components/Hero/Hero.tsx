@@ -19,7 +19,7 @@ export const Hero = () => (
                 </h1>
                 <h3 className="gray-subtitle">Mikro magazyny już od 1 m³</h3>
                 <h3 className="gray-subtitle">od 2,68 zł za dzień!</h3>
-                <Button className="mt-3" variant="danger">
+                <Button href="#" className="mt-3" variant="danger">
                     Sprawdź rozmiary
                 </Button>
             </Col>

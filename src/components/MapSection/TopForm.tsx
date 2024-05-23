@@ -6,6 +6,7 @@ import Button from 'react-bootstrap/Button';
 import clsx from 'clsx';
 
 import search from '../../assets/icons/search.svg';
+import blackPin from '../../assets/icons/pin-map-black.svg';
 import { LatLng } from './cards';
 
 import style from './MapSection.module.scss';
@@ -71,7 +72,7 @@ export const TopForm = (props: TopFormProps) => {
         if (marker) {
             marker.setPosition(position);
         } else {
-            setMarker(new markerLib.Marker({ map, position }));
+            setMarker(new markerLib.Marker({ map, position, icon: blackPin }));
         }
     };
 

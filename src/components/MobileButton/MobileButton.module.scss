@@ -1,0 +1,23 @@
+@import '../../style/variables';
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.actionButton {
+    display: none;
+    padding: 6px 36px;
+    width: 80vw;
+    box-shadow: 0px 0px 32px 0px rgba(195, 25, 24, 0.5);
+    @media only screen and (max-width: 992px) {
+        display: block;
+        position: fixed;
+        bottom: 32px;
+    }
+}
+
+.buttonText {
+    font-size: 20px;
+    font-weight: 600;
+}

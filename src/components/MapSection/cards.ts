@@ -14,16 +14,16 @@ export interface StorageCard {
 export const storageCards: StorageCard[] = [
     {
         city: 'Piaseczno',
-        address: 'Jana Pawła II 41',
+        address: 'Jana Pawła II 45',
         zipCode: '05-500',
         image: piaseczno,
-        latLng: { lat: 52.074398, lng: 21.0144066 }
+        latLng: { lat: 52.0739427, lng: 21.0156116 }
     },
     {
         city: 'Pruszków',
         address: 'Bolesława Prusa 10',
         zipCode: '05-800',
         image: pruszkow,
-        latLng: { lat: 52.1675058, lng: 20.8055244 }
+        latLng: { lat: 52.1672958, lng: 20.807974 }
     }
 ];
