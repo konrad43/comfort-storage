@@ -6,10 +6,10 @@ import useEmblaCarousel from 'embla-carousel-react';
 import { DotButton, useDotButton } from './DotButtons';
 import style from './Carousel.module.scss';
 import clsx from 'clsx';
-import { CarouselCard } from '../CarouselCard/CarouselCard';
+import { CarouselCard, Slide } from '../CarouselCard/CarouselCard';
 
 type CarouselProps = {
-    slides: number[];
+    slides: Slide[];
     options?: EmblaOptionsType;
 };
 
@@ -39,10 +39,10 @@ export const Carousel: React.FC<CarouselProps> = props => {
             <section className={style.embla}>
                 <div className={style.embla__viewport} ref={emblaRef}>
                     <div className={style.embla__container}>
-                        {slides.map(index => (
+                        {slides.map((slide, index) => (
                             <div className={style.embla__slide} key={index}>
                                 <div className={style.embla__slide__content}>
-                                    <CarouselCard />
+                                    <CarouselCard slide={slide} />
                                 </div>
                             </div>
                         ))}
