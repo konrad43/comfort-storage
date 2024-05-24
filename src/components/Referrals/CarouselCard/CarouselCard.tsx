@@ -33,7 +33,6 @@ export const CarouselCard: FC<{ slide: Slide }> = ({ slide }) => {
             <Card.Body>
                 <div className={style.iconWrapper}>
                     <Icon text={firstLetter} />
-                    <p className={clsx(style.cardText, style.date)}>{date || '01/01/2024'}</p>
                 </div>
                 <h6 className={clsx(style.cardTitle, 'pt-2')}>{name}</h6>
                 <Card.Text className={clsx('cardText', style.cardBody)}>{desc}</Card.Text>

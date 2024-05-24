@@ -5,8 +5,11 @@ import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
 import Button from 'react-bootstrap/Button';
 
-import style from './Footer.module.scss';
 import logo from '../../assets/comfort storage logo 1.png';
+// @ts-expect-error
+import privacyPolicy from '../../assets/comfor-storage-polityka-prywatnosci.pdf';
+
+import style from './Footer.module.scss';
 import { SocialMedia } from './SocialMedia';
 
 export const Footer = () => {
@@ -67,7 +70,7 @@ export const Footer = () => {
                             <p className={clsx('ps-0')}>
                                 © 2024 Comfort Storage. All rights reserved.
                             </p>
-                            <div>
+                            <div className={style.footerLinksWrapper}>
                                 <a className={style.footerLink} href="#" target="_blank">
                                     Cennik
                                 </a>
@@ -76,6 +79,12 @@ export const Footer = () => {
                                 </a>
                                 <a className={style.footerLink} href="#" target="_blank">
                                     Kontakt
+                                </a>
+                                <a
+                                    className={style.footerLink}
+                                    href={privacyPolicy}
+                                    target="_blank">
+                                    Polityka Prywatności
                                 </a>
                             </div>
                         </div>

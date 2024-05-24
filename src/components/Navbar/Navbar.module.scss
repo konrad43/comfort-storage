@@ -18,6 +18,10 @@
     color: $gray800;
 }
 
+.navLink {
+    text-align: center;
+}
+
 .mobileNav {
     @media only screen and (max-width: 992px) {
         display: flex;

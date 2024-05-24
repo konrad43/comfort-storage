@@ -41,6 +41,11 @@
 .footerBottom {
     display: flex;
     justify-content: space-between;
+    @media only screen and (max-width: 992px) {
+        padding-bottom: 60px !important;
+        flex-direction: column-reverse;
+        // align-items: center;
+    }
 }
 
 .footerLink {
@@ -50,6 +55,19 @@
 
     &:hover {
         color: $gray800;
+    }
+
+    @media only screen and (max-width: 992px) {
+        padding-bottom: 15px;
+        margin-left: 0;
+    }
+}
+
+.footerLinksWrapper {
+    @media only screen and (max-width: 992px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 }
 

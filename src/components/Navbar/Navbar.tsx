@@ -35,13 +35,19 @@ export const MainNavbar = () => (
                 <Offcanvas.Body className={clsx(style.navBody)}>
                     <Col className="d-flex justify-content-center" lg={9}>
                         <Nav className="d-flex mb-3 mb-lg-0">
-                            <Nav.Link className="mx-2 mb-3 mb-lg-0" href="/#locations">
+                            <Nav.Link
+                                className={clsx('mx-2 mb-3 mb-lg-0', style.navLink)}
+                                href="/#locations">
                                 <span className={style.link}>Lokalizacje</span>
                             </Nav.Link>
-                            <Nav.Link className="mx-2 mb-3 mb-lg-0" href="#features">
+                            <Nav.Link
+                                className={clsx('mx-2 mb-3 mb-lg-0', style.navLink)}
+                                href="#features">
                                 <span className={style.link}>Cennik</span>
                             </Nav.Link>
-                            <Nav.Link className="mx-2 mb-3 mb-lg-0" href="/contact">
+                            <Nav.Link
+                                className={clsx('mx-2 mb-3 mb-lg-0', style.navLink)}
+                                href="/contact">
                                 <span className={style.link}>Kontakt</span>
                             </Nav.Link>
                         </Nav>
