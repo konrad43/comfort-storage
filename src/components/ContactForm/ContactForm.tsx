@@ -1,5 +1,6 @@
-import { ChangeEvent, ChangeEventHandler, FormEvent, SyntheticEvent, useState } from 'react';
+import { ChangeEvent, SyntheticEvent, useState } from 'react';
 import clsx from 'clsx';
+import { Bounce, ToastOptions, toast } from 'react-toastify';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -21,14 +22,36 @@ interface FormData {
     message: string;
 }
 
-const sendData = (formData: FormData) => {
-    fetch('/contact', {
-        method: 'POST',
-        body: JSON.stringify(formData),
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    }).then(console.log);
+const toastConfig: ToastOptions = {
+    position: 'top-right',
+    autoClose: 3000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: 'light',
+    transition: Bounce
+};
+
+const sendData = async (formData: FormData) => {
+    try {
+        await fetch('/contact', {
+            method: 'POST',
+            body: JSON.stringify(formData),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then(res => {
+            console.log(res);
+
+            res.status === 200
+                ? toast.success('Dziękujemy za przesłanie formularza', toastConfig)
+                : toast.error('Przesyłanie formularza nie powiodło się', toastConfig);
+        });
+    } catch (error) {
+        toast.error('Przesyłanie formularza nie powiodło się', toastConfig);
+    }
 };
 
 export const ContactForm = () => {
@@ -59,6 +82,7 @@ export const ContactForm = () => {
                                 <Form.Label>Imię i nazwisko</Form.Label>
                                 <Form.Control
                                     className={style.control}
+                                    required
                                     type="text"
                                     placeholder="Wpisz imię i nazwisko"
                                     value={name}
@@ -69,6 +93,7 @@ export const ContactForm = () => {
                                 <Form.Label>E-mail</Form.Label>
                                 <Form.Control
                                     className={style.control}
+                                    required
                                     type="email"
                                     placeholder="Wpisz e-mail"
                                     value={email}
@@ -79,6 +104,7 @@ export const ContactForm = () => {
                                 <Form.Label>Wiadomość</Form.Label>
                                 <Form.Control
                                     className={style.control}
+                                    required
                                     as="textarea"
                                     rows={5}
                                     placeholder="Napisz wiadomość"

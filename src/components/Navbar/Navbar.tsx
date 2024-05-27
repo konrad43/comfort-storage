@@ -18,7 +18,7 @@ export const MainNavbar = () => (
         className={clsx(style.mobile, style.navbar)}
         sticky="top">
         <Container>
-            <Navbar.Brand href="/">
+            <Navbar.Brand href="/home">
                 <img src={logo} alt="logo" className={style.logo} />
                 <span className="semi-bold">Comfort Storage</span>
             </Navbar.Brand>
@@ -26,7 +26,7 @@ export const MainNavbar = () => (
             <Navbar.Offcanvas id="responsive-navbar-nav" placement="end">
                 <Offcanvas.Header closeButton className={style.mobileNav}>
                     <Offcanvas.Title id={`offcanvasNavbarLabel-expand`}>
-                        <Navbar.Brand href="#home">
+                        <Navbar.Brand href="/home">
                             <img src={logo} alt="logo" className={style.logo} />
                             <span className="semi-bold">Comfort Storage</span>
                         </Navbar.Brand>
@@ -37,7 +37,7 @@ export const MainNavbar = () => (
                         <Nav className="d-flex mb-3 mb-lg-0">
                             <Nav.Link
                                 className={clsx('mx-2 mb-3 mb-lg-0', style.navLink)}
-                                href="/#locations">
+                                href="/home#locations">
                                 <span className={style.link}>Lokalizacje</span>
                             </Nav.Link>
                             <Nav.Link
