@@ -9,6 +9,7 @@ import style from './Navbar.module.scss';
 import logo from '../../assets/comfort storage logo 1.png';
 import clsx from 'clsx';
 import { SocialMedia } from '../Footer/SocialMedia';
+import { reservationLink } from '../../constants';
 
 export const MainNavbar = () => (
     <Navbar
@@ -42,7 +43,8 @@ export const MainNavbar = () => (
                             </Nav.Link>
                             <Nav.Link
                                 className={clsx('mx-2 mb-3 mb-lg-0', style.navLink)}
-                                href="#features">
+                                href={reservationLink}
+                                target="_blank">
                                 <span className={style.link}>Cennik</span>
                             </Nav.Link>
                             <Nav.Link
@@ -54,7 +56,11 @@ export const MainNavbar = () => (
                     </Col>
                     <Col className="mt-lg-0 mt-xs-4" lg={3}>
                         <div className={style.mobileNav}>
-                            <Button className={style.navBtn} variant="danger">
+                            <Button
+                                className={style.navBtn}
+                                variant="danger"
+                                href={reservationLink}
+                                target="_blank">
                                 Rezerwuj teraz
                             </Button>
                         </div>

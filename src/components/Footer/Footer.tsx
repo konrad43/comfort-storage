@@ -11,6 +11,7 @@ import privacyPolicy from '../../assets/comfor-storage-polityka-prywatnosci.pdf'
 
 import style from './Footer.module.scss';
 import { SocialMedia } from './SocialMedia';
+import { reservationLink } from '../../constants';
 
 export const Footer = () => {
     return (
@@ -24,7 +25,11 @@ export const Footer = () => {
                                 <h3 className={style.logoText}>Comfort Storage</h3>
                             </div>
                         </div>
-                        <Button className="my-4" variant="outline-light">
+                        <Button
+                            className="my-4"
+                            variant="outline-light"
+                            href={reservationLink}
+                            target="_blank">
                             Rezerwuj teraz
                         </Button>
                         <SocialMedia />
@@ -71,13 +76,16 @@ export const Footer = () => {
                                 © 2024 Comfort Storage. All rights reserved.
                             </p>
                             <div className={style.footerLinksWrapper}>
-                                <a className={style.footerLink} href="#" target="_blank">
+                                <a
+                                    className={style.footerLink}
+                                    href={reservationLink}
+                                    target="_blank">
                                     Cennik
                                 </a>
-                                <a className={style.footerLink} href="#" target="_blank">
+                                {/* <a className={style.footerLink} href="#" target="_blank">
                                     Blog
-                                </a>
-                                <a className={style.footerLink} href="#" target="_blank">
+                                </a> */}
+                                <a className={style.footerLink} href="/contact">
                                     Kontakt
                                 </a>
                                 <a

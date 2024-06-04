@@ -7,6 +7,7 @@ import { EmblaOptionsType } from 'embla-carousel';
 import style from './Referrals.module.scss';
 import { Carousel } from './Carousel/Carousel';
 import { SLIDES } from './slides';
+import { reservationLink } from '../../constants';
 
 const OPTIONS: EmblaOptionsType = { loop: true };
 
@@ -17,7 +18,11 @@ export const Referrals = () => {
                 <div className={style.referralsHeader}>
                     <h3 className="heading-h3">Opinie z Google</h3>
                     <h4 className="gray-subtitle">Dołącz do grona zadowolonych klientów</h4>
-                    <Button className="mt-2" variant="danger">
+                    <Button
+                        className="mt-2"
+                        variant="danger"
+                        href={reservationLink}
+                        target="_blank">
                         Rezerwuj teraz
                     </Button>
                 </div>
