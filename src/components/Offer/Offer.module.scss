@@ -19,6 +19,10 @@
 .animation {
     width: 611px;
     height: 512px;
+    @media only screen and (min-width: 993px) and (max-width: 1200px) {
+        width: 427px;
+        height: 358px;
+    }
 }
 
 @media only screen and (max-width: 992px) {

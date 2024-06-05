@@ -18,16 +18,17 @@ export const Offer = () => (
     <Container fluid className={style.offerWrapper}>
         <Container>
             <Row>
-                <Col lg={6}>
+                <Col xxl={6} lg={7}>
                     <video
                         className={clsx('object-fit-contain', style.animation)}
+                        playsInline
                         muted
                         autoPlay
                         loop>
                         <source src={animation} />
                     </video>
                 </Col>
-                <Col className={style.flexContainer} lg={6}>
+                <Col className={style.flexContainer} xxl={6} lg={5}>
                     <div>
                         <h3 className="heading-h3">Szeroki wybór rozmiarów</h3>
                         <h5 className={(style.subtitle, 'heading-h5')}>{subtitle1}</h5>
