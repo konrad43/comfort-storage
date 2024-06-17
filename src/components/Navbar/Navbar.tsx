@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -7,9 +8,7 @@ import Col from 'react-bootstrap/Col';
 
 import style from './Navbar.module.scss';
 import logo from '../../assets/comfort storage logo 1.png';
-import clsx from 'clsx';
-import { SocialMedia } from '../Footer/SocialMedia';
-import { reservationLink } from '../../constants';
+import { rentLink, reservationLink } from '../../constants';
 
 export const MainNavbar = () => (
     <Navbar
@@ -34,7 +33,7 @@ export const MainNavbar = () => (
                     </Offcanvas.Title>
                 </Offcanvas.Header>
                 <Offcanvas.Body className={clsx(style.navBody)}>
-                    <Col className="d-flex justify-content-center" lg={9}>
+                    <Col className="d-flex justify-content-center" lg={7}>
                         <Nav className="d-flex mb-3 mb-lg-0">
                             <Nav.Link
                                 className={clsx('mx-2 mb-3 mb-lg-0', style.navLink)}
@@ -54,14 +53,23 @@ export const MainNavbar = () => (
                             </Nav.Link>
                         </Nav>
                     </Col>
-                    <Col className="mt-lg-0 mt-xs-4" lg={3}>
+                    <Col className="mt-lg-0 mt-xs-4" lg={5}>
                         <div className={style.mobileNav}>
                             <Button
-                                className={style.navBtn}
+                                className={clsx(style.navBtn, 'mb-4 mb-lg-0')}
                                 variant="danger"
                                 href={reservationLink}
                                 target="_blank">
-                                Rezerwuj teraz
+                                Wynajmij teraz
+                            </Button>
+                        </div>
+                        <div className={style.mobileNav}>
+                            <Button
+                                className={clsx(style.navBtn, 'mb-3 mb-lg-0 me-lg-2')}
+                                variant="outline-dark"
+                                href={rentLink}
+                                target="_blank">
+                                Moje wynajmy
                             </Button>
                         </div>
                     </Col>

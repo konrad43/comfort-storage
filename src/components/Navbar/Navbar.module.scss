@@ -30,6 +30,11 @@
 }
 
 .navBtn {
+    &:hover {
+        background-color: $red700;
+        border-color: $red700;
+    }
+
     @media only screen and (min-width: 992px) {
         float: right;
     }
