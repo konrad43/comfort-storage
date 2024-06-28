@@ -9,6 +9,7 @@ export interface StorageCard {
     address: string;
     zipCode: string;
     latLng: LatLng;
+    link: string;
 }
 export const storageCards: StorageCard[] = [
     {
@@ -16,13 +17,15 @@ export const storageCards: StorageCard[] = [
         address: 'Jana Pawła II 45',
         zipCode: '05-500',
         image: piaseczno,
-        latLng: { lat: 52.07394842206938, lng: 21.015793215501 }
+        latLng: { lat: 52.07394842206938, lng: 21.015793215501 },
+        link: 'https://wynajmij.comfortstorage.eu/location/0'
     },
     {
         city: 'Pruszków',
         address: 'Bolesława Prusa 10',
         zipCode: '05-800',
         image: pruszkow,
-        latLng: { lat: 52.1672958, lng: 20.807974 }
+        latLng: { lat: 52.1672958, lng: 20.807974 },
+        link: 'https://wynajmij.comfortstorage.eu/location/1'
     }
 ];

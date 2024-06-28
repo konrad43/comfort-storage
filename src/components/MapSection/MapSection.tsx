@@ -14,14 +14,13 @@ import { TopForm } from './TopForm';
 import { mapStyles } from '../Map/map.config';
 
 import style from './MapSection.module.scss';
-import { reservationLink } from '../../constants';
 interface HorizontalCardProps extends StorageCard {
     onClick: (card: StorageCard) => void;
 }
 
 const HorizontalCard = (props: HorizontalCardProps) => {
     const { onClick, ...cardData } = props;
-    const { city, address, zipCode, image } = cardData;
+    const { city, address, zipCode, image, link } = cardData;
     return (
         <Card className={clsx('mb-2', style.horizontalCard)} onClick={() => onClick(cardData)}>
             <Row className="g-0">
@@ -40,7 +39,7 @@ const HorizontalCard = (props: HorizontalCardProps) => {
                             <Button
                                 className={clsx(style.cardButton)}
                                 variant="link"
-                                href={reservationLink}
+                                href={link}
                                 target="_blank">
                                 Rezerwuj teraz
                             </Button>
