@@ -20,7 +20,7 @@ interface HorizontalCardProps extends StorageCard {
 
 const HorizontalCard = (props: HorizontalCardProps) => {
     const { onClick, ...cardData } = props;
-    const { city, address, zipCode, image, link } = cardData;
+    const { city, address, zipCode, image, link, building } = cardData;
     return (
         <Card className={clsx('mb-2', style.horizontalCard)} onClick={() => onClick(cardData)}>
             <Row className="g-0">
@@ -29,8 +29,8 @@ const HorizontalCard = (props: HorizontalCardProps) => {
                 </Col>
                 <Col xs={8} className="d-flex">
                     <Card.Body className="ps-4 my-auto">
-                        <Card.Title>{city}</Card.Title>
-                        <Card.Text className="gray-text">
+                        <Card.Title>{building ? building : city}</Card.Title>
+                        <Card.Text className={clsx(style.cardText, 'gray-text')}>
                             {address},
                             <br />
                             {zipCode} {city}
