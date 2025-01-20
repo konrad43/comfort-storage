@@ -15,6 +15,15 @@ export interface StorageCard {
 }
 export const storageCards: StorageCard[] = [
     {
+        city: 'Warszawa',
+        building: 'Galeria Młociny',
+        address: 'Zgrupowania AK "Kampinos" 15',
+        zipCode: '01-943',
+        image: mlociny,
+        latLng: { lat: 52.29416417999828, lng: 20.929214742506122 },
+        link: 'https://wynajmij.comfortstorage.eu/location/2'
+    },
+    {
         city: 'Piaseczno',
         address: 'Jana Pawła II 45',
         zipCode: '05-500',
@@ -29,14 +38,5 @@ export const storageCards: StorageCard[] = [
         image: pruszkow,
         latLng: { lat: 52.1672958, lng: 20.807974 },
         link: 'https://wynajmij.comfortstorage.eu/location/1'
-    },
-    {
-        city: 'Warszawa',
-        building: 'Galeria Młociny',
-        address: 'Zgrupowania AK "Kampinos" 15',
-        zipCode: '01-943',
-        image: mlociny,
-        latLng: { lat: 52.29416417999828, lng: 20.929214742506122 },
-        link: 'https://wynajmij.comfortstorage.eu/location/0'
     }
 ];
